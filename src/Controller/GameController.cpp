@@ -4,6 +4,7 @@
 #include "Farmer.cpp"
 #include "Alien.cpp"
 
+
 class GameController {
 private:
     Farmer player;
@@ -27,8 +28,8 @@ public:
             if (enemy.getHealth() <= 0) {
                 std::cout << "Alien defeated!" << std::endl;
                 //drop component if alien dies
-                //assuming setComponent method in Alien class to set the dropped component
-                enemy.dropComponent();
+                //assuming dropComponent method in Alien class to set the dropped component
+                enemy.dropComponent(); //component class?
                 break;
             }
 
