@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://df0tunq0rhvfl"]
+
+[ext_resource type="Texture2D" uid="uid://dh5u3aim0ijo" path="res://Landscape.png" id="1_n5n87"]
+[ext_resource type="Texture2D" uid="uid://dsfncc71x78kb" path="res://Farmer.png" id="2_20tcs"]
+[ext_resource type="Texture2D" uid="uid://btumarfm3xo0g" path="res://Alien.png" id="3_x2yoc"]
+[ext_resource type="Texture2D" uid="uid://tgp3ogu84cnp" path="res://Tractor.png" id="4_kum5m"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(0, -2)
+
+[node name="Landscape" type="Sprite2D" parent="."]
+position = Vector2(800, 704)
+scale = Vector2(0.639516, 0.572177)
+texture = ExtResource("1_n5n87")
+
+[node name="Farmer" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Farmer"]
+
+[node name="Farmer" type="Sprite2D" parent="Farmer"]
+position = Vector2(536, 695)
+scale = Vector2(0.690726, 0.75)
+texture = ExtResource("2_20tcs")
+
+[node name="Alien1" type="CharacterBody2D" parent="."]
+
+[node name="Alien" type="Sprite2D" parent="Alien1"]
+position = Vector2(1082, 999)
+scale = Vector2(0.162198, 0.13498)
+texture = ExtResource("3_x2yoc")
+
+[node name="Alien2" type="CharacterBody2D" parent="."]
+
+[node name="Alien" type="Sprite2D" parent="Alien2"]
+position = Vector2(491, 223)
+scale = Vector2(0.162198, 0.13498)
+texture = ExtResource("3_x2yoc")
+
+[node name="Tractor2" type="CharacterBody2D" parent="."]
+
+[node name="Tractor" type="Sprite2D" parent="Tractor2"]
+position = Vector2(1356.88, 247)
+scale = Vector2(0.219254, 0.233871)
+texture = ExtResource("4_kum5m")

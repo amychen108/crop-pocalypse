@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgc2pv37tn48u"]
+
+[ext_resource type="Texture2D" uid="uid://cxoa5h8fpwcqg" path="res://OpenScreen.png" id="1_x0m1q"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-6, -3)
+
+[node name="OpenScreen" type="Sprite2D" parent="."]
+position = Vector2(809, 702)
+scale = Vector2(0.641129, 0.554032)
+texture = ExtResource("1_x0m1q")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 673.0
+offset_top = 736.0
+offset_right = 940.0
+offset_bottom = 831.0
+theme_override_font_sizes/font_size = 48
+text = "Restart"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 676.0
+offset_top = 623.0
+offset_right = 1056.0
+offset_bottom = 757.0
+theme_override_font_sizes/font_size = 48
+text = "YOU WIN!!!"
