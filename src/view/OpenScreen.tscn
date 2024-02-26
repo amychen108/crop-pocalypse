@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://yrgt6lnf0ar1"]
+
+[ext_resource type="Texture2D" uid="uid://cxoa5h8fpwcqg" path="res://OpenScreen.png" id="1_gp811"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-6, -3)
+
+[node name="OpenScreen" type="Sprite2D" parent="."]
+position = Vector2(809, 702)
+scale = Vector2(0.641129, 0.554032)
+texture = ExtResource("1_gp811")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 673.0
+offset_top = 672.0
+offset_right = 940.0
+offset_bottom = 767.0
+theme_override_font_sizes/font_size = 48
+text = "Start"
