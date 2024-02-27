@@ -1,0 +1,8 @@
+Coding Standards (C++)
+
+- When writing classes, functions, for loops, and if statements, the open curly brace should be on the same line as the declaration, and the close bracket should be on its own line.
+- Functions should be camel case, Classes should be capitalized camel case, and variable names should be camel case.
+- When naming classes, functions, and variables, name them effectively.
+- Headers should be files that can work on their own.
+- Comments should go above the line they are describing.
+- We will be using the std namespace.
