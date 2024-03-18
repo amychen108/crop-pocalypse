@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://djccl8w3otjc0"]
+
+[ext_resource type="Texture2D" uid="uid://dh5u3aim0ijo" path="res://Landscape.png" id="1_6sxag"]
+[ext_resource type="Texture2D" uid="uid://btumarfm3xo0g" path="res://Alien.png" id="2_r04g6"]
+[ext_resource type="Texture2D" uid="uid://tgp3ogu84cnp" path="res://Tractor.png" id="3_w8v0v"]
+[ext_resource type="Texture2D" uid="uid://balpm3y75ute5" path="res://ufo.png" id="4_o1as8"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(0, -2)
+
+[node name="Landscape" type="Sprite2D" parent="."]
+position = Vector2(800, 719)
+scale = Vector2(0.639516, 0.572177)
+texture = ExtResource("1_6sxag")
+
+[node name="Alien1" type="CharacterBody2D" parent="."]
+
+[node name="Alien" type="Sprite2D" parent="Alien1"]
+position = Vector2(1211, 747)
+scale = Vector2(0.162198, 0.13498)
+texture = ExtResource("2_r04g6")
+
+[node name="Alien2" type="CharacterBody2D" parent="."]
+
+[node name="Alien" type="Sprite2D" parent="Alien2"]
+position = Vector2(491, 223)
+scale = Vector2(0.162198, 0.13498)
+texture = ExtResource("2_r04g6")
+
+[node name="Alien3" type="CharacterBody2D" parent="."]
+
+[node name="Alien" type="Sprite2D" parent="Alien3"]
+position = Vector2(374, 1089)
+scale = Vector2(0.162198, 0.13498)
+texture = ExtResource("2_r04g6")
+
+[node name="Tractor2" type="CharacterBody2D" parent="."]
+
+[node name="Tractor" type="Sprite2D" parent="Tractor2"]
+position = Vector2(494, 672)
+scale = Vector2(0.219254, 0.233871)
+texture = ExtResource("3_w8v0v")
+
+[node name="UFO" type="CharacterBody2D" parent="."]
+
+[node name="Ufo" type="Sprite2D" parent="."]
+position = Vector2(1282, 194.375)
+scale = Vector2(0.183065, 0.135988)
+texture = ExtResource("4_o1as8")
