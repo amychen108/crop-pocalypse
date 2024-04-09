@@ -1,33 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://wjh0txkfdpou"]
+[gd_scene load_steps=6 format=3 uid="uid://wjh0txkfdpou"]
 
 [ext_resource type="Texture2D" uid="uid://dh5u3aim0ijo" path="res://Landscape.png" id="1_0q8aa"]
-[ext_resource type="Texture2D" uid="uid://btyefbsxdirug" path="res://Farmhand.png" id="2_d58pm"]
-[ext_resource type="Texture2D" uid="uid://btumarfm3xo0g" path="res://Alien.png" id="3_kyjh7"]
+[ext_resource type="Script" path="res://Alien1.gd" id="2_1fqjg"]
+[ext_resource type="PackedScene" uid="uid://cx46yqg3fftyg" path="res://Alien.tscn" id="4_4hwvj"]
 [ext_resource type="Texture2D" uid="uid://dcxrxf5nnwxy6" path="res://Farmhouse.png" id="4_sejto"]
+[ext_resource type="PackedScene" uid="uid://cvye1tb86u1k5" path="res://farm_hand.tscn" id="5_u7kou"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(0, -2)
 
 [node name="Landscape" type="Sprite2D" parent="."]
-position = Vector2(797, 719)
-scale = Vector2(0.639516, 0.572177)
+position = Vector2(798, 801)
+scale = Vector2(0.643145, 0.644556)
 texture = ExtResource("1_0q8aa")
-
-[node name="Farmhand" type="CharacterBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Farmhand"]
-
-[node name="Farmhand" type="Sprite2D" parent="Farmhand"]
-position = Vector2(448, 567)
-scale = Vector2(0.25625, 0.21754)
-texture = ExtResource("2_d58pm")
-
-[node name="Alien1" type="CharacterBody2D" parent="."]
-
-[node name="Alien" type="Sprite2D" parent="Alien1"]
-position = Vector2(1030.88, 630.375)
-scale = Vector2(0.162198, 0.13498)
-texture = ExtResource("3_kyjh7")
 
 [node name="Farmhouse" type="CharacterBody2D" parent="."]
 
@@ -35,3 +20,9 @@ texture = ExtResource("3_kyjh7")
 position = Vector2(1313, 264)
 scale = Vector2(0.334274, 0.337903)
 texture = ExtResource("4_sejto")
+
+[node name="FarmHand2" parent="." instance=ExtResource("5_u7kou")]
+position = Vector2(531, 774)
+
+[node name="Alien" parent="." instance=ExtResource("4_4hwvj")]
+script = ExtResource("2_1fqjg")
