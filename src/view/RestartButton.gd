@@ -10,4 +10,4 @@ func _ready():
 # Called when the button is clicked
 func _pressed():
 	# Change to the Level1 scene
-	scene_tree.change_scene_to_file("res://OpenScreen.tscn")
+	scene_tree.change_scene_to_file("res://Level1.tscn")
