@@ -4,18 +4,18 @@
 [ext_resource type="Script" path="res://Farmhand_player.gd" id="1_nh55e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w4jlp"]
-radius = 12.0
-height = 54.0
+radius = 11.0
+height = 52.0
 
 [node name="Farmhand" type="Area2D"]
 position = Vector2(2, -1)
 script = ExtResource("1_nh55e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(141, 292)
+position = Vector2(19, 34)
 scale = Vector2(0.047379, 0.047379)
 texture = ExtResource("1_0bfrd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(136, 288)
+position = Vector2(14, 30)
 shape = SubResource("CapsuleShape2D_w4jlp")
