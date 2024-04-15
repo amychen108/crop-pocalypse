@@ -38,6 +38,7 @@ position = Vector2(530, 768)
 script = ExtResource("2_1fqjg")
 
 [node name="TutorialHUD" type="CanvasLayer" parent="."]
+process_mode = 2
 script = ExtResource("7_2prp8")
 
 [node name="Label" type="Label" parent="TutorialHUD"]
@@ -64,5 +65,4 @@ text = "Start"
 [node name="Timer" type="Timer" parent="TutorialHUD"]
 
 [connection signal="body_entered" from="Farmhouse" to="Farmhouse" method="_on_body_entered"]
-[connection signal="child_entered_tree" from="Farmhouse/CollisionShape2D" to="Farmhouse" method="_on_collision_shape_2d_child_entered_tree"]
 [connection signal="pressed" from="TutorialHUD/Button" to="TutorialHUD" method="_on_button_pressed"]

@@ -15,7 +15,7 @@ func _on_body_entered(node):
 	print("Entered body name:", node.name)
 	if node.name == "FarmHand2":
 		print("Farm touched the house")
-	get_tree().change_scene_to_file("res://Level2.tscn")
+		get_tree().change_scene_to_file("res://Level2.tscn")
 	
 
 
