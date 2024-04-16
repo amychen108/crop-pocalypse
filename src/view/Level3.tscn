@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://djccl8w3otjc0"]
+[gd_scene load_steps=8 format=3 uid="uid://djccl8w3otjc0"]
 
 [ext_resource type="Texture2D" uid="uid://dh5u3aim0ijo" path="res://Landscape.png" id="1_6sxag"]
+[ext_resource type="Script" path="res://UFO.gd" id="2_hii0u"]
 [ext_resource type="PackedScene" uid="uid://dvje4v3m2w03o" path="res://tractor.tscn" id="3_2enbh"]
 [ext_resource type="PackedScene" uid="uid://cx46yqg3fftyg" path="res://Alien.tscn" id="4_cmt13"]
 [ext_resource type="Texture2D" uid="uid://balpm3y75ute5" path="res://ufo.png" id="4_o1as8"]
 [ext_resource type="Script" path="res://Alien3.gd" id="5_k5ylx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h028u"]
+radius = 69.0072
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(0, -2)
@@ -14,13 +18,18 @@ position = Vector2(795, 806)
 scale = Vector2(0.64879, 0.640524)
 texture = ExtResource("1_6sxag")
 
-[node name="UFO" type="CharacterBody2D" parent="."]
+[node name="UFO" type="Area2D" parent="."]
 position = Vector2(100, 339)
+script = ExtResource("2_hii0u")
 
-[node name="Ufo" type="Sprite2D" parent="."]
-position = Vector2(1282, 194.375)
+[node name="Ufo" type="Sprite2D" parent="UFO"]
+position = Vector2(1182, -144.625)
 scale = Vector2(0.183065, 0.135988)
 texture = ExtResource("4_o1as8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UFO"]
+position = Vector2(1191, -137)
+shape = SubResource("CircleShape2D_h028u")
 
 [node name="Tractor" parent="." instance=ExtResource("3_2enbh")]
 position = Vector2(472, 1076)
@@ -36,3 +45,5 @@ script = ExtResource("5_k5ylx")
 [node name="Alien3" parent="." instance=ExtResource("4_cmt13")]
 position = Vector2(1208, 857)
 script = ExtResource("5_k5ylx")
+
+[connection signal="body_entered" from="UFO" to="UFO" method="_on_body_entered"]
