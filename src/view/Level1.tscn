@@ -51,14 +51,15 @@ text = "Level 1
 
 Aliens are invading your farm!
 Quickly, 
-run to the door of house to notify the farmhand!"
+run to the door of house to notify the farmhand!
+Use WASD to move."
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="Tutorial1HUD"]
-offset_left = 650.0
-offset_top = 632.0
-offset_right = 934.0
-offset_bottom = 733.0
+offset_left = 661.0
+offset_top = 715.0
+offset_right = 945.0
+offset_bottom = 816.0
 theme_override_font_sizes/font_size = 64
 text = "Begin"
 
