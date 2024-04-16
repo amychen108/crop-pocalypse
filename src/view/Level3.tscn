@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://djccl8w3otjc0"]
+[gd_scene load_steps=9 format=3 uid="uid://djccl8w3otjc0"]
 
 [ext_resource type="Texture2D" uid="uid://dh5u3aim0ijo" path="res://Landscape.png" id="1_6sxag"]
 [ext_resource type="Script" path="res://UFO.gd" id="2_hii0u"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cx46yqg3fftyg" path="res://Alien.tscn" id="4_cmt13"]
 [ext_resource type="Texture2D" uid="uid://balpm3y75ute5" path="res://ufo.png" id="4_o1as8"]
 [ext_resource type="Script" path="res://Alien3.gd" id="5_k5ylx"]
+[ext_resource type="Script" path="res://TutorialHUD.gd" id="7_oheig"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h028u"]
 radius = 69.0072
@@ -46,4 +47,30 @@ script = ExtResource("5_k5ylx")
 position = Vector2(1208, 857)
 script = ExtResource("5_k5ylx")
 
+[node name="Tutorial3HUD" type="CanvasLayer" parent="."]
+process_mode = 2
+script = ExtResource("7_oheig")
+
+[node name="Label" type="Label" parent="Tutorial3HUD"]
+offset_left = 322.0
+offset_top = 273.0
+offset_right = 1253.0
+offset_bottom = 725.0
+theme_override_font_sizes/font_size = 64
+text = "Level 3
+
+Quickly,
+run over all the aliens 
+and destroy their mothership!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Tutorial3HUD"]
+offset_left = 710.0
+offset_top = 743.0
+offset_right = 892.0
+offset_bottom = 839.0
+theme_override_font_sizes/font_size = 64
+text = "Begin"
+
 [connection signal="body_entered" from="UFO" to="UFO" method="_on_body_entered"]
+[connection signal="pressed" from="Tutorial3HUD/Button" to="Tutorial3HUD" method="_on_button_pressed"]
