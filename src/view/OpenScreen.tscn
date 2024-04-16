@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://yrgt6lnf0ar1"]
+[gd_scene load_steps=3 format=3 uid="uid://yrgt6lnf0ar1"]
 
 [ext_resource type="Texture2D" uid="uid://cxoa5h8fpwcqg" path="res://OpenScreen.png" id="1_gp811"]
+[ext_resource type="Script" path="res://ButtonStart.gd" id="2_3hodk"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-6, -3)
@@ -17,3 +18,4 @@ offset_right = 940.0
 offset_bottom = 767.0
 theme_override_font_sizes/font_size = 48
 text = "Start"
+script = ExtResource("2_3hodk")

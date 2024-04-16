@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://wjh0txkfdpou"]
+[gd_scene load_steps=9 format=3 uid="uid://wjh0txkfdpou"]
 
 [ext_resource type="Texture2D" uid="uid://dh5u3aim0ijo" path="res://Landscape.png" id="1_0q8aa"]
 [ext_resource type="Script" path="res://Alien1.gd" id="2_1fqjg"]
+[ext_resource type="Script" path="res://Farmhouse.gd" id="3_xtnfe"]
 [ext_resource type="PackedScene" uid="uid://cx46yqg3fftyg" path="res://Alien.tscn" id="4_4hwvj"]
 [ext_resource type="Texture2D" uid="uid://dcxrxf5nnwxy6" path="res://Farmhouse.png" id="4_sejto"]
 [ext_resource type="PackedScene" uid="uid://cvye1tb86u1k5" path="res://farm_hand.tscn" id="5_u7kou"]
+[ext_resource type="Script" path="res://TutorialHUD.gd" id="7_2prp8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2kmhi"]
+size = Vector2(75, 100)
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(0, -2)
@@ -14,15 +19,50 @@ position = Vector2(798, 801)
 scale = Vector2(0.643145, 0.644556)
 texture = ExtResource("1_0q8aa")
 
-[node name="Farmhouse" type="CharacterBody2D" parent="."]
+[node name="Farmhouse" type="Area2D" parent="."]
+script = ExtResource("3_xtnfe")
 
 [node name="Farmhouse" type="Sprite2D" parent="Farmhouse"]
 position = Vector2(1313, 264)
 scale = Vector2(0.334274, 0.337903)
 texture = ExtResource("4_sejto")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Farmhouse"]
+position = Vector2(1144.5, 280)
+shape = SubResource("RectangleShape2D_2kmhi")
+
 [node name="FarmHand2" parent="." instance=ExtResource("5_u7kou")]
-position = Vector2(531, 774)
+position = Vector2(530, 768)
 
 [node name="Alien" parent="." instance=ExtResource("4_4hwvj")]
 script = ExtResource("2_1fqjg")
+
+[node name="TutorialHUD" type="CanvasLayer" parent="."]
+script = ExtResource("7_2prp8")
+
+[node name="Label" type="Label" parent="TutorialHUD"]
+offset_left = -83.0
+offset_top = 162.0
+offset_right = 1681.0
+offset_bottom = 614.0
+theme_override_font_sizes/font_size = 64
+text = "Level 1
+
+Aliens are invading your farm!
+Quickly, 
+run to the door of house to notify the farmhand!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="TutorialHUD"]
+offset_left = 616.0
+offset_top = 642.0
+offset_right = 1024.0
+offset_bottom = 767.0
+theme_override_font_sizes/font_size = 64
+text = "Start"
+
+[node name="Timer" type="Timer" parent="TutorialHUD"]
+
+[connection signal="body_entered" from="Farmhouse" to="Farmhouse" method="_on_body_entered"]
+[connection signal="child_entered_tree" from="Farmhouse/CollisionShape2D" to="Farmhouse" method="_on_collision_shape_2d_child_entered_tree"]
+[connection signal="pressed" from="TutorialHUD/Button" to="TutorialHUD" method="_on_button_pressed"]

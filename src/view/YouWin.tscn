@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgc2pv37tn48u"]
+[gd_scene load_steps=3 format=3 uid="uid://cgc2pv37tn48u"]
 
 [ext_resource type="Texture2D" uid="uid://cxoa5h8fpwcqg" path="res://OpenScreen.png" id="1_x0m1q"]
+[ext_resource type="Script" path="res://ButtonWin.gd" id="2_nexmw"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-6, -3)
@@ -17,6 +18,7 @@ offset_right = 940.0
 offset_bottom = 831.0
 theme_override_font_sizes/font_size = 48
 text = "Restart"
+script = ExtResource("2_nexmw")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 676.0
