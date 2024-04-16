@@ -37,11 +37,11 @@ position = Vector2(530, 768)
 [node name="Alien" parent="." instance=ExtResource("4_4hwvj")]
 script = ExtResource("2_1fqjg")
 
-[node name="TutorialHUD" type="CanvasLayer" parent="."]
+[node name="Tutorial1HUD" type="CanvasLayer" parent="."]
 process_mode = 2
 script = ExtResource("7_2prp8")
 
-[node name="Label" type="Label" parent="TutorialHUD"]
+[node name="Label" type="Label" parent="Tutorial1HUD"]
 offset_left = -83.0
 offset_top = 162.0
 offset_right = 1681.0
@@ -54,14 +54,14 @@ Quickly,
 run to the door of house to notify the farmhand!"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="TutorialHUD"]
-offset_left = 616.0
-offset_top = 642.0
-offset_right = 1024.0
-offset_bottom = 767.0
+[node name="Button" type="Button" parent="Tutorial1HUD"]
+offset_left = 650.0
+offset_top = 632.0
+offset_right = 934.0
+offset_bottom = 733.0
 theme_override_font_sizes/font_size = 64
-text = "Start"
+text = "Begin"
 
 [connection signal="body_entered" from="Farmhouse" to="Farmhouse" method="_on_body_entered"]
 [connection signal="child_entered_tree" from="Farmhouse/CollisionShape2D" to="Farmhouse" method="_on_collision_shape_2d_child_entered_tree"]
-[connection signal="pressed" from="TutorialHUD/Button" to="TutorialHUD" method="_on_button_pressed"]
+[connection signal="pressed" from="Tutorial1HUD/Button" to="Tutorial1HUD" method="_on_button_pressed"]

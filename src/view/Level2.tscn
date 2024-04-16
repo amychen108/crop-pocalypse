@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://df0tunq0rhvfl"]
+[gd_scene load_steps=9 format=3 uid="uid://df0tunq0rhvfl"]
 
 [ext_resource type="Texture2D" uid="uid://dh5u3aim0ijo" path="res://Landscape.png" id="1_n5n87"]
 [ext_resource type="Script" path="res://TractorLv2.gd" id="2_g2uod"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://tgp3ogu84cnp" path="res://Tractor.png" id="4_kum5m"]
 [ext_resource type="PackedScene" uid="uid://cx46yqg3fftyg" path="res://Alien.tscn" id="4_pe3a8"]
 [ext_resource type="Script" path="res://Alien2.gd" id="5_n0vd3"]
+[ext_resource type="Script" path="res://TutorialHUD.gd" id="7_6nebt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_71my7"]
 size = Vector2(154, 140.5)
@@ -41,4 +42,30 @@ script = ExtResource("5_n0vd3")
 position = Vector2(1268, 690)
 script = ExtResource("5_n0vd3")
 
+[node name="Tutorial2HUD" type="CanvasLayer" parent="."]
+process_mode = 2
+script = ExtResource("7_6nebt")
+
+[node name="Label" type="Label" parent="Tutorial2HUD"]
+offset_left = 143.0
+offset_top = 309.0
+offset_right = 1497.0
+offset_bottom = 579.0
+theme_override_font_sizes/font_size = 64
+text = "Level 2
+
+Quickly,
+run to the tractor!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Tutorial2HUD"]
+offset_left = 677.0
+offset_top = 689.0
+offset_right = 982.0
+offset_bottom = 785.0
+theme_override_font_sizes/font_size = 64
+text = "Begin"
+
 [connection signal="body_entered" from="Tractor2" to="Tractor2" method="_on_body_entered"]
+[connection signal="pressed" from="Tutorial2HUD/Button" to="Tutorial2HUD" method="_on_button_pressed"]
