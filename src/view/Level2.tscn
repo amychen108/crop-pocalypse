@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://df0tunq0rhvfl"]
+[gd_scene load_steps=7 format=3 uid="uid://df0tunq0rhvfl"]
 
 [ext_resource type="Texture2D" uid="uid://dh5u3aim0ijo" path="res://Landscape.png" id="1_n5n87"]
 [ext_resource type="PackedScene" uid="uid://bb5biilmrib2f" path="res://Farmer.tscn" id="3_dc2r7"]
+[ext_resource type="Script" path="res://Health2.gd" id="4_7wg8i"]
 [ext_resource type="Texture2D" uid="uid://tgp3ogu84cnp" path="res://Tractor.png" id="4_kum5m"]
 [ext_resource type="PackedScene" uid="uid://cx46yqg3fftyg" path="res://Alien.tscn" id="4_pe3a8"]
 [ext_resource type="Script" path="res://Alien2.gd" id="5_n0vd3"]
@@ -23,6 +24,18 @@ texture = ExtResource("4_kum5m")
 
 [node name="Farmer" parent="." instance=ExtResource("3_dc2r7")]
 position = Vector2(430, 999)
+
+[node name="Health2" type="Node" parent="Farmer"]
+script = ExtResource("4_7wg8i")
+
+[node name="Lives2" type="Label" parent="Farmer/Health2"]
+offset_left = 329.0
+offset_top = 16.0
+offset_right = 504.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
 
 [node name="Alien" parent="." instance=ExtResource("4_pe3a8")]
 position = Vector2(742, 321)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://wjh0txkfdpou"]
+[gd_scene load_steps=7 format=3 uid="uid://wjh0txkfdpou"]
 
 [ext_resource type="Texture2D" uid="uid://dh5u3aim0ijo" path="res://Landscape.png" id="1_0q8aa"]
 [ext_resource type="Script" path="res://Alien1.gd" id="2_1fqjg"]
 [ext_resource type="PackedScene" uid="uid://cx46yqg3fftyg" path="res://Alien.tscn" id="4_4hwvj"]
 [ext_resource type="Texture2D" uid="uid://dcxrxf5nnwxy6" path="res://Farmhouse.png" id="4_sejto"]
 [ext_resource type="PackedScene" uid="uid://cvye1tb86u1k5" path="res://farm_hand.tscn" id="5_u7kou"]
+[ext_resource type="Script" path="res://Health.gd" id="7_xfcs3"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(0, -2)
@@ -24,5 +25,23 @@ texture = ExtResource("4_sejto")
 [node name="FarmHand2" parent="." instance=ExtResource("5_u7kou")]
 position = Vector2(531, 774)
 
+[node name="Health" type="Node" parent="FarmHand2"]
+script = ExtResource("7_xfcs3")
+
+[node name="Lives" type="Label" parent="FarmHand2/Health"]
+offset_left = 205.0
+offset_top = 8.0
+offset_right = 345.0
+offset_bottom = 63.0
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+vertical_alignment = 1
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FarmHand2"]
+
 [node name="Alien" parent="." instance=ExtResource("4_4hwvj")]
 script = ExtResource("2_1fqjg")
+
+[connection signal="body_entered" from="FarmHand2" to="FarmHand2" method="_on_body_entered"]

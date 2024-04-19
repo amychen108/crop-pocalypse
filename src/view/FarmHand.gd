@@ -1,21 +1,22 @@
-extends CharacterBody2D
+extends Area2D
 
+var health
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var collision
+var input
+var alien
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	alien = get_node("Node2D/Alien")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 func _physics_process(delta):
 	var screensize = get_viewport_rect().size
-	var input = Vector2()
+	input = Vector2()
 	if Input.is_key_pressed(KEY_W):
 		input.y = -10
 	elif Input.is_key_pressed(KEY_S):
@@ -35,3 +36,7 @@ func _physics_process(delta):
 	position += input
 	position.x = clamp(position.x, 0, screensize.x)
 	position.y = clamp(position.y, 0, screensize.y)
+
+
+func _on_body_entered(body):
+	$Health.lose_life()
