@@ -31,6 +31,5 @@ func _physics_process(delta):
 	position.x = clamp(position.x, 0, screensize.x)
 	position.y = clamp(position.y, 0, screensize.y)
 
-
 func _on_body_entered(body):
 	$Health.lose_life()

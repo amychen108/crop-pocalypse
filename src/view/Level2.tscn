@@ -16,8 +16,8 @@ size = Vector2(154, 140.5)
 position = Vector2(0, -2)
 
 [node name="Landscape" type="Sprite2D" parent="."]
-position = Vector2(814.5, 792.75)
-scale = Vector2(0.65121, 0.637298)
+position = Vector2(808, 792)
+scale = Vector2(0.651607, 0.637096)
 texture = ExtResource("1_n5n87")
 
 [node name="Tractor2" type="Area2D" parent="."]
@@ -40,7 +40,7 @@ script = ExtResource("5_2s8kf")
 
 [node name="Lives" type="Label" parent="Farmer/Health"]
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 88.0
 theme_override_font_sizes/font_size = 64
 
 [node name="Alien" parent="." instance=ExtResource("4_pe3a8")]
@@ -76,5 +76,5 @@ offset_bottom = 785.0
 theme_override_font_sizes/font_size = 64
 text = "Begin"
 
-[connection signal="body_entered" from="Tractor2" to="Tractor2" method="_on_body_entered"]
+[connection signal="area_entered" from="Tractor2" to="Tractor2" method="_on_area_entered"]
 [connection signal="pressed" from="Tutorial2HUD/Button" to="Tutorial2HUD" method="_on_button_pressed"]

@@ -10,12 +10,6 @@ func _ready():
 func _process(delta):
 	pass
 
-func _on_body_entered(node):
-	# Check if the entering body is the one you expect
-	print("Entered body name:", node.name)
-	if node.name == "FarmHand2":
-		print("Farm touched the house")
+func _on_area_entered(area):
+	if area.name == "FarmHand2":
 		get_tree().change_scene_to_file("res://Level2.tscn")
-	
-
-

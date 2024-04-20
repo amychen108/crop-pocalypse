@@ -6,15 +6,10 @@ func _ready():
 	scene_tree = get_tree()
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
-
-
-func _on_body_entered(node):
-	print("Entered body name:", node.name)
-	if node.name == "Farmer":
-		print("Farmer touched the tractor")
+func _on_area_entered(area):
+	if area.name == "Farmer":
 		get_tree().change_scene_to_file("res://Level3.tscn") 
