@@ -14,9 +14,9 @@ radius = 69.0072
 
 [sub_resource type="Curve2D" id="Curve2D_5m3hx"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 1600, 18, 0, 0, 0, 0, 1592, 1586, 0, 0, 0, 0, 0, 1586, 0, 0, 0, 0, 0, 10)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 1600, 18, 0, 0, 0, 0, 1592, 1586, 0, 0, 0, 0, 0, 1586, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 936, 1098)
 }
-point_count = 5
+point_count = 6
 
 [node name="Level3" type="Node2D"]
 position = Vector2(0, -2)

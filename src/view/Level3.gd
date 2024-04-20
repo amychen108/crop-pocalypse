@@ -1,0 +1,30 @@
+extends Node2D
+
+@export var alien_scene: PackedScene
+const sc = preload("res://Alien3.gd")
+
+func _ready():
+	$SpawnTimer.start()
+
+func _process(delta):
+	pass
+
+func _on_spawn_timer_timeout():
+	var al = alien_scene.instantiate()
+	al.set_script(sc)
+	
+	var al_spawn_loc = $SpawnPath/SpawnFollow
+	al_spawn_loc.progress_ratio = randf()
+	
+	var direction = al_spawn_loc.rotation + PI / 2
+	
+	al.position = al_spawn_loc.position
+	
+	direction += randf_range(-PI/4, PI/4)
+	
+	var velocity = Vector2(randf_range(200, 300), 0)
+	al.velocity = velocity.rotated(direction)
+	
+	add_child(al)
+	
+	

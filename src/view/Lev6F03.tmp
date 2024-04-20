@@ -14,7 +14,7 @@ radius = 69.0072
 
 [sub_resource type="Curve2D" id="Curve2D_5m3hx"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 1600, 18, 0, 0, 0, 0, 1592, 1586, 0, 0, 0, 0, 0, 1586, 0, 0, 0, 0, 0, 10)
+"points": PackedVector2Array(0, 0, 0, 0, -8, 2, 0, 0, 0, 0, 1608, 2, 0, 0, 0, 0, 1616, 1586, 0, 0, 0, 0, -8, 1594, 0, 0, 0, 0, -8, 2)
 }
 point_count = 5
 
@@ -87,8 +87,7 @@ text = "Begin"
 curve = SubResource("Curve2D_5m3hx")
 
 [node name="SpawnFollow" type="PathFollow2D" parent="SpawnPath"]
-position = Vector2(0, 10)
-rotation = 0.00499996
+position = Vector2(-8, 2)
 
 [connection signal="body_entered" from="UFO" to="UFO" method="_on_body_entered"]
 [connection signal="pressed" from="Tutorial3HUD/Button" to="Tutorial3HUD" method="_on_button_pressed"]

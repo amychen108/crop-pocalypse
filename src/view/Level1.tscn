@@ -12,7 +12,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2kmhi"]
 size = Vector2(75, 100)
 
-[node name="Node2D" type="Node2D"]
+[node name="Level1" type="Node2D"]
 position = Vector2(0, -2)
 
 [node name="Landscape" type="Sprite2D" parent="."]
