@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://dvje4v3m2w03o"]
 
-[ext_resource type="Script" path="res://Tractor.gd" id="1_sj72l"]
+[ext_resource type="Script" path="res://Tractor3.gd" id="1_v63hi"]
 [ext_resource type="Texture2D" uid="uid://tgp3ogu84cnp" path="res://Tractor.png" id="3_ubanw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rv268"]
 size = Vector2(408.5, 121.25)
 
 [node name="Tractor" type="CharacterBody2D"]
-script = ExtResource("1_sj72l")
+script = ExtResource("1_v63hi")
 
 [node name="Tractor" type="Sprite2D" parent="."]
 position = Vector2(45, 41.0001)

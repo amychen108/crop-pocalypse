@@ -11,9 +11,8 @@ config_version=5
 [application]
 
 config/name="my Testing"
-run/main_scene="res://Level1.tscn"
+run/main_scene="res://OpenScreen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
 
 [display]
 

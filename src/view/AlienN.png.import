@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsmt2v5uamc87"
-path="res://.godot/imported/LandSelected.png-ebe5f20b2b871d2487e76d016687d39e.ctex"
+uid="uid://ccxokpnt075cp"
+path="res://.godot/imported/AlienN.png-c2404bb3653a8209c9a0784d7d0c3f67.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://LandSelected.png"
-dest_files=["res://.godot/imported/LandSelected.png-ebe5f20b2b871d2487e76d016687d39e.ctex"]
+source_file="res://AlienN.png"
+dest_files=["res://.godot/imported/AlienN.png-c2404bb3653a8209c9a0784d7d0c3f67.ctex"]
 
 [params]
 
