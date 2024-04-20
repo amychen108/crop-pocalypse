@@ -11,5 +11,5 @@ func _process(delta):
 	pass
 
 func _on_area_entered(area):
-	if area.name == "FarmHand2":
+	if area.name == "Farmhand":
 		get_tree().change_scene_to_file("res://Level2.tscn")

@@ -15,6 +15,5 @@ func _process(delta):
 
 func _on_body_entered(node):
 	print("Entered body name:", node.name)
-	if node.name == "Tractor":
-		print("Tractor touched the UFO")
+	if node.name == "Tractor3":
 		get_tree().change_scene_to_file("res://YouWin.tscn") 

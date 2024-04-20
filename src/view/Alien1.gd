@@ -3,7 +3,7 @@ extends CharacterBody2D
 var player
 
 func _ready():
-	player = get_node("/root/Node2D/FarmHand2")
+	player = get_node("/root/Node2D/Farmhand")
 	$Alien.visible = false
 
 func _physics_process(delta):

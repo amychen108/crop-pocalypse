@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cx46yqg3fftyg" path="res://Alien.tscn" id="4_4hwvj"]
 [ext_resource type="Texture2D" uid="uid://dcxrxf5nnwxy6" path="res://Farmhouse.png" id="4_sejto"]
 [ext_resource type="Script" path="res://Health.gd" id="5_hgufq"]
-[ext_resource type="PackedScene" uid="uid://cvye1tb86u1k5" path="res://FarmHand2.tscn" id="5_u7kou"]
+[ext_resource type="PackedScene" uid="uid://cvye1tb86u1k5" path="res://Farmhand.tscn" id="5_u7kou"]
 [ext_resource type="Script" path="res://TutorialHUD.gd" id="7_2prp8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2kmhi"]
@@ -32,13 +32,13 @@ texture = ExtResource("4_sejto")
 position = Vector2(1144.5, 280)
 shape = SubResource("RectangleShape2D_2kmhi")
 
-[node name="FarmHand2" parent="." instance=ExtResource("5_u7kou")]
+[node name="Farmhand" parent="." instance=ExtResource("5_u7kou")]
 position = Vector2(530, 768)
 
-[node name="Health" type="Node" parent="FarmHand2"]
+[node name="Health" type="Node" parent="Farmhand"]
 script = ExtResource("5_hgufq")
 
-[node name="Lives" type="Label" parent="FarmHand2/Health"]
+[node name="Lives" type="Label" parent="Farmhand/Health"]
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 64

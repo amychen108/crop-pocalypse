@@ -32,7 +32,7 @@ texture = ExtResource("4_o1as8")
 position = Vector2(1191, -137)
 shape = SubResource("CircleShape2D_h028u")
 
-[node name="Tractor" parent="." instance=ExtResource("3_2enbh")]
+[node name="Tractor3" parent="." instance=ExtResource("3_2enbh")]
 position = Vector2(472, 1076)
 
 [node name="Alien" parent="." instance=ExtResource("4_cmt13")]

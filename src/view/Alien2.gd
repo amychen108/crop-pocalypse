@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
 var player
+
 func _ready():
-		player = get_node("/root/Node2D/Farmer")
+	player = get_node("/root/Node2D/Farmer")
+
 func _physics_process(delta):
 	# Add the gravity.
 	var direction = global_position.direction_to(player.global_position)
