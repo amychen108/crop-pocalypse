@@ -1,7 +1,4 @@
-extends CharacterBody2D
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,7 +7,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-	
+
 func _physics_process(delta):
 	var screensize = get_viewport_rect().size
 	var input = Vector2()
@@ -33,3 +30,6 @@ func _physics_process(delta):
 	position += input
 	position.x = clamp(position.x, 0, screensize.x)
 	position.y = clamp(position.y, 0, screensize.y)
+
+func _on_body_entered(body):
+	$Health.lose_life()

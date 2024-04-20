@@ -7,24 +7,24 @@
 position = Vector2(-6, -3)
 
 [node name="OpenScreen" type="Sprite2D" parent="."]
-position = Vector2(512, 325)
+position = Vector2(801, 690)
 scale = Vector2(0.641129, 0.554032)
 texture = ExtResource("1_n14a5")
 
 [node name="ButtonRestart" type="Button" parent="."]
-offset_left = 339.0
-offset_top = 338.0
-offset_right = 606.0
-offset_bottom = 433.0
+offset_left = 671.0
+offset_top = 727.0
+offset_right = 938.0
+offset_bottom = 822.0
 theme_override_font_sizes/font_size = 48
 text = "Restart"
 script = ExtResource("2_xrttt")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 307.0
-offset_top = 228.0
-offset_right = 687.0
-offset_bottom = 362.0
+offset_left = 639.0
+offset_top = 617.0
+offset_right = 1019.0
+offset_bottom = 751.0
 theme_override_colors/font_color = Color(0.964706, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 text = "YOU LOSE!!!"

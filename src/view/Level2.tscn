@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://df0tunq0rhvfl"]
+[gd_scene load_steps=10 format=3 uid="uid://df0tunq0rhvfl"]
 
 [ext_resource type="Texture2D" uid="uid://dh5u3aim0ijo" path="res://Landscape.png" id="1_n5n87"]
 [ext_resource type="Script" path="res://TractorLv2.gd" id="2_g2uod"]
 [ext_resource type="PackedScene" uid="uid://bb5biilmrib2f" path="res://Farmer.tscn" id="3_dc2r7"]
 [ext_resource type="Texture2D" uid="uid://tgp3ogu84cnp" path="res://Tractor.png" id="4_kum5m"]
 [ext_resource type="PackedScene" uid="uid://cx46yqg3fftyg" path="res://Alien.tscn" id="4_pe3a8"]
+[ext_resource type="Script" path="res://Health.gd" id="5_2s8kf"]
 [ext_resource type="Script" path="res://Alien2.gd" id="5_n0vd3"]
 [ext_resource type="Script" path="res://TutorialHUD.gd" id="7_6nebt"]
 
@@ -33,6 +34,14 @@ shape = SubResource("RectangleShape2D_71my7")
 
 [node name="Farmer" parent="." instance=ExtResource("3_dc2r7")]
 position = Vector2(430, 999)
+
+[node name="Health" type="Node" parent="Farmer"]
+script = ExtResource("5_2s8kf")
+
+[node name="Lives" type="Label" parent="Farmer/Health"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 64
 
 [node name="Alien" parent="." instance=ExtResource("4_pe3a8")]
 position = Vector2(742, 321)
