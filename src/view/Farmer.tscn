@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bb5biilmrib2f"]
+[gd_scene load_steps=5 format=3 uid="uid://bb5biilmrib2f"]
 
 [ext_resource type="Script" path="res://Farmer.gd" id="1_ck53n"]
 [ext_resource type="Texture2D" uid="uid://dsfncc71x78kb" path="res://Farmer.png" id="2_l5x7h"]
+[ext_resource type="AudioStream" uid="uid://bxgkg47h6bbqv" path="res://music/OOF.mp3" id="3_ub1s4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ogakm"]
 radius = 51.0
@@ -17,5 +18,8 @@ shape = SubResource("CapsuleShape2D_ogakm")
 position = Vector2(86.9999, 59)
 scale = Vector2(0.690726, 0.75)
 texture = ExtResource("2_l5x7h")
+
+[node name="OOF" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ub1s4")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

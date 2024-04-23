@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://djccl8w3otjc0"]
+[gd_scene load_steps=12 format=3 uid="uid://djccl8w3otjc0"]
 
 [ext_resource type="Texture2D" uid="uid://dh5u3aim0ijo" path="res://Landscape.png" id="1_6sxag"]
 [ext_resource type="Script" path="res://Level3.gd" id="1_h0tmf"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cx46yqg3fftyg" path="res://Alien.tscn" id="4_cmt13"]
 [ext_resource type="Texture2D" uid="uid://balpm3y75ute5" path="res://ufo.png" id="4_o1as8"]
 [ext_resource type="Script" path="res://Alien3.gd" id="5_k5ylx"]
+[ext_resource type="Script" path="res://Score.gd" id="7_5fgyt"]
 [ext_resource type="Script" path="res://TutorialHUD.gd" id="7_oheig"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h028u"]
@@ -44,16 +45,16 @@ shape = SubResource("CircleShape2D_h028u")
 [node name="Tractor3" parent="." instance=ExtResource("3_2enbh")]
 position = Vector2(472, 1076)
 
+[node name="Score" type="Node" parent="Tractor3"]
+script = ExtResource("7_5fgyt")
+
+[node name="Count" type="Label" parent="Tractor3/Score"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 64
+
 [node name="Alien" parent="." instance=ExtResource("4_cmt13")]
-position = Vector2(566, 181)
-script = ExtResource("5_k5ylx")
-
-[node name="Alien2" parent="." instance=ExtResource("4_cmt13")]
-position = Vector2(804, 491)
-script = ExtResource("5_k5ylx")
-
-[node name="Alien3" parent="." instance=ExtResource("4_cmt13")]
-position = Vector2(1208, 857)
+position = Vector2(1167, 1046)
 script = ExtResource("5_k5ylx")
 
 [node name="Tutorial3HUD" type="CanvasLayer" parent="."]
@@ -82,6 +83,7 @@ theme_override_font_sizes/font_size = 64
 text = "Begin"
 
 [node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.3
 
 [node name="SpawnPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_5m3hx")
@@ -90,6 +92,7 @@ curve = SubResource("Curve2D_5m3hx")
 position = Vector2(0, 10)
 rotation = 0.00499996
 
-[connection signal="body_entered" from="UFO" to="UFO" method="_on_body_entered"]
+[connection signal="area_entered" from="UFO" to="UFO" method="_on_area_entered"]
+[connection signal="body_entered" from="Tractor3" to="Tractor3" method="_on_body_entered"]
 [connection signal="pressed" from="Tutorial3HUD/Button" to="Tutorial3HUD" method="_on_button_pressed"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

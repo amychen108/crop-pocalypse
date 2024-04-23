@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvye1tb86u1k5"]
+[gd_scene load_steps=5 format=3 uid="uid://cvye1tb86u1k5"]
 
 [ext_resource type="Script" path="res://Farmhand.gd" id="1_lqcot"]
 [ext_resource type="Texture2D" uid="uid://btyefbsxdirug" path="res://Farmhand.png" id="2_uakei"]
+[ext_resource type="AudioStream" uid="uid://bxgkg47h6bbqv" path="res://music/OOF.mp3" id="3_6enu0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vorvw"]
 radius = 48.0
@@ -18,5 +19,8 @@ texture = ExtResource("2_uakei")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, -3)
 shape = SubResource("CapsuleShape2D_vorvw")
+
+[node name="OOF" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_6enu0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

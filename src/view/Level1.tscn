@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://wjh0txkfdpou"]
+[gd_scene load_steps=12 format=3 uid="uid://wjh0txkfdpou"]
 
 [ext_resource type="Texture2D" uid="uid://dh5u3aim0ijo" path="res://Landscape.png" id="1_0q8aa"]
+[ext_resource type="Script" path="res://Level1.gd" id="1_msfka"]
 [ext_resource type="Script" path="res://Alien1.gd" id="2_1fqjg"]
 [ext_resource type="Script" path="res://Farmhouse.gd" id="3_xtnfe"]
 [ext_resource type="PackedScene" uid="uid://cx46yqg3fftyg" path="res://Alien.tscn" id="4_4hwvj"]
@@ -8,12 +9,14 @@
 [ext_resource type="Script" path="res://Health.gd" id="5_hgufq"]
 [ext_resource type="PackedScene" uid="uid://cvye1tb86u1k5" path="res://Farmhand.tscn" id="5_u7kou"]
 [ext_resource type="Script" path="res://TutorialHUD.gd" id="7_2prp8"]
+[ext_resource type="AudioStream" uid="uid://cvijyvg5d2s5t" path="res://music/lv1.mp3" id="10_f7m4h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2kmhi"]
 size = Vector2(75, 100)
 
 [node name="Level1" type="Node2D"]
 position = Vector2(0, -2)
+script = ExtResource("1_msfka")
 
 [node name="Landscape" type="Sprite2D" parent="."]
 position = Vector2(798, 801)
@@ -71,6 +74,9 @@ offset_right = 945.0
 offset_bottom = 816.0
 theme_override_font_sizes/font_size = 64
 text = "Begin"
+
+[node name="LV1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_f7m4h")
 
 [connection signal="area_entered" from="Farmhouse" to="Farmhouse" method="_on_area_entered"]
 [connection signal="pressed" from="Tutorial1HUD/Button" to="Tutorial1HUD" method="_on_button_pressed"]
