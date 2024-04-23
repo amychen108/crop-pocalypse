@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgc2pv37tn48u"]
+[gd_scene load_steps=3 format=3 uid="uid://cgc2pv37tn48u"]
 
 [ext_resource type="Texture2D" uid="uid://cxoa5h8fpwcqg" path="res://OpenScreen.png" id="1_x0m1q"]
+[ext_resource type="AudioStream" uid="uid://b5iwmm1lucryc" path="res://bgm/sl.mp3" id="2_sl4yd"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-6, -3)
@@ -25,3 +26,7 @@ offset_right = 1056.0
 offset_bottom = 757.0
 theme_override_font_sizes/font_size = 48
 text = "YOU WIN!!!"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_sl4yd")
+autoplay = true

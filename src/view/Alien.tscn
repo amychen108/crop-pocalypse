@@ -1,12 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cx46yqg3fftyg"]
+[gd_scene load_steps=6 format=3 uid="uid://cx46yqg3fftyg"]
 
 [ext_resource type="Texture2D" uid="uid://btumarfm3xo0g" path="res://Alien.png" id="1_htj3a"]
+[ext_resource type="Script" path="res://Alien.gd" id="1_jnmvc"]
+[ext_resource type="AudioStream" uid="uid://bibpkuixfllvt" path="res://bgm/ss.mp3" id="3_hj62v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2u4cy"]
 radius = 43.0
 height = 248.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_77nao"]
+radius = 235.765
+
 [node name="Alien" type="CharacterBody2D"]
+script = ExtResource("1_jnmvc")
 
 [node name="Alien" type="Sprite2D" parent="."]
 position = Vector2(10, -31)
@@ -16,3 +22,13 @@ texture = ExtResource("1_htj3a")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, -2)
 shape = SubResource("CapsuleShape2D_2u4cy")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_77nao")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hj62v")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

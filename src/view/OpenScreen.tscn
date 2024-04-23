@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://yrgt6lnf0ar1"]
+[gd_scene load_steps=3 format=3 uid="uid://yrgt6lnf0ar1"]
 
 [ext_resource type="Texture2D" uid="uid://cxoa5h8fpwcqg" path="res://OpenScreen.png" id="1_gp811"]
+[ext_resource type="AudioStream" uid="uid://bwe8dh7o1nr0n" path="res://bgm/bgm_1.mp3" id="2_xppob"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-6, -3)
@@ -17,3 +18,7 @@ offset_right = 940.0
 offset_bottom = 767.0
 theme_override_font_sizes/font_size = 48
 text = "Start"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xppob")
+autoplay = true

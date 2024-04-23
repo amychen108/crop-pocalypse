@@ -26,3 +26,9 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body):
+	if body is Player:
+		$AudioStreamPlayer2.play()
+	pass # Replace with function body.

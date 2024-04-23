@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://wjh0txkfdpou"]
+[gd_scene load_steps=7 format=3 uid="uid://wjh0txkfdpou"]
 
 [ext_resource type="Texture2D" uid="uid://dh5u3aim0ijo" path="res://Landscape.png" id="1_0q8aa"]
 [ext_resource type="Script" path="res://Alien1.gd" id="2_1fqjg"]
 [ext_resource type="PackedScene" uid="uid://cx46yqg3fftyg" path="res://Alien.tscn" id="4_4hwvj"]
 [ext_resource type="Texture2D" uid="uid://dcxrxf5nnwxy6" path="res://Farmhouse.png" id="4_sejto"]
 [ext_resource type="PackedScene" uid="uid://cvye1tb86u1k5" path="res://farm_hand.tscn" id="5_u7kou"]
+[ext_resource type="AudioStream" uid="uid://oym23br4nla6" path="res://bgm/bgm_0.mp3" id="6_eg4ga"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(0, -2)
@@ -26,3 +27,7 @@ position = Vector2(531, 774)
 
 [node name="Alien" parent="." instance=ExtResource("4_4hwvj")]
 script = ExtResource("2_1fqjg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_eg4ga")
+autoplay = true
