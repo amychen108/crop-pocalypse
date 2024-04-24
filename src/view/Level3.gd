@@ -5,9 +5,7 @@ const sc = preload("res://Alien3.gd")
 
 func _ready():
 	$SpawnTimer.start()
-
-func _process(delta):
-	pass
+	$LV3.play()
 
 func _on_spawn_timer_timeout():
 	var al = alien_scene.instantiate()
@@ -27,4 +25,4 @@ func _on_spawn_timer_timeout():
 	
 	add_child(al)
 	
-	
+

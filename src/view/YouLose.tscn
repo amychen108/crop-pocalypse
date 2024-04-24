@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj0kfbqepq32u"]
+[gd_scene load_steps=5 format=3 uid="uid://cj0kfbqepq32u"]
 
+[ext_resource type="Script" path="res://YouLose.gd" id="1_0u53o"]
 [ext_resource type="Texture2D" uid="uid://cxoa5h8fpwcqg" path="res://OpenScreen.png" id="1_n14a5"]
 [ext_resource type="Script" path="res://RestartButton.gd" id="2_xrttt"]
+[ext_resource type="AudioStream" uid="uid://cj10ibp81icrv" path="res://music/defeat.mp3" id="4_k2on6"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-6, -3)
+script = ExtResource("1_0u53o")
 
 [node name="OpenScreen" type="Sprite2D" parent="."]
 position = Vector2(801, 690)
@@ -28,3 +31,6 @@ offset_bottom = 751.0
 theme_override_colors/font_color = Color(0.964706, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 text = "YOU LOSE!!!"
+
+[node name="LOSE" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_k2on6")

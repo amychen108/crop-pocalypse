@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://yrgt6lnf0ar1"]
+[gd_scene load_steps=5 format=3 uid="uid://yrgt6lnf0ar1"]
 
+[ext_resource type="Script" path="res://OpenScreen.gd" id="1_2bfod"]
 [ext_resource type="Texture2D" uid="uid://cxoa5h8fpwcqg" path="res://OpenScreen.png" id="1_gp811"]
-[ext_resource type="Script" path="res://ButtonStart.gd" id="2_3hodk"]
+[ext_resource type="Script" path="res://ButtonMenu.gd" id="2_3hodk"]
+[ext_resource type="AudioStream" uid="uid://dbbkjldgqy8ni" path="res://music/bgmTitle.mp3" id="4_xh8j7"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-6, -3)
+script = ExtResource("1_2bfod")
 
 [node name="OpenScreen" type="Sprite2D" parent="."]
 position = Vector2(809, 702)
@@ -19,3 +22,6 @@ offset_bottom = 767.0
 theme_override_font_sizes/font_size = 48
 text = "Start"
 script = ExtResource("2_3hodk")
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_xh8j7")

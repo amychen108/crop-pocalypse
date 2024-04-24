@@ -7,4 +7,11 @@ func _ready():
 	$Alien.visible = false
 
 func _physics_process(delta):
-	move_and_slide()
+	var collision = move_and_collide(velocity * delta)
+	if collision:
+		velocity = velocity.bounce(collision.get_normal())
+
+func _process(delta):
+	if (position.x > 1700 or position.x < -200) or (position.y > 1700 or position.y < -200):
+		queue_free()
+		
