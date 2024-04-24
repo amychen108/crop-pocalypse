@@ -4,7 +4,7 @@ var scene_tree
 var scoreLabel
 var healthLabel
 var lastSpawn = 0
-var scoreInterval = 5
+var scoreInterval = 10
 var flag = 0
 
 func _ready():

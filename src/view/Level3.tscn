@@ -101,7 +101,7 @@ theme_override_font_sizes/font_size = 64
 text = "Begin"
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.25
 
 [node name="SpawnPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_5m3hx")
