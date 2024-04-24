@@ -5,6 +5,7 @@ const sc = preload("res://Alien3.gd")
 
 func _ready():
 	$SpawnTimer.start()
+	$LV3.play()
 
 func _process(delta):
 	pass

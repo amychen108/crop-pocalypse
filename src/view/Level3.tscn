@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://djccl8w3otjc0"]
+[gd_scene load_steps=13 format=3 uid="uid://djccl8w3otjc0"]
 
 [ext_resource type="Texture2D" uid="uid://dh5u3aim0ijo" path="res://Landscape.png" id="1_6sxag"]
 [ext_resource type="Script" path="res://Level3.gd" id="1_h0tmf"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Alien3.gd" id="5_k5ylx"]
 [ext_resource type="Script" path="res://Score.gd" id="7_5fgyt"]
 [ext_resource type="Script" path="res://TutorialHUD.gd" id="7_oheig"]
+[ext_resource type="AudioStream" uid="uid://clne275le01u8" path="res://music/lv3.mp3" id="10_jm5su"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h028u"]
 radius = 69.0072
@@ -91,6 +92,9 @@ curve = SubResource("Curve2D_5m3hx")
 [node name="SpawnFollow" type="PathFollow2D" parent="SpawnPath"]
 position = Vector2(0, 10)
 rotation = 0.00499996
+
+[node name="LV3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_jm5su")
 
 [connection signal="area_entered" from="UFO" to="UFO" method="_on_area_entered"]
 [connection signal="body_entered" from="Tractor3" to="Tractor3" method="_on_body_entered"]
