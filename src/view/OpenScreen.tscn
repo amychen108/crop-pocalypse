@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://OpenScreen.gd" id="1_2bfod"]
 [ext_resource type="Texture2D" uid="uid://cxoa5h8fpwcqg" path="res://OpenScreen.png" id="1_gp811"]
-[ext_resource type="Script" path="res://ButtonStart.gd" id="2_3hodk"]
+[ext_resource type="Script" path="res://ButtonMenu.gd" id="2_3hodk"]
 [ext_resource type="AudioStream" uid="uid://dbbkjldgqy8ni" path="res://music/bgmTitle.mp3" id="4_xh8j7"]
 
 [node name="Node2D" type="Node2D"]

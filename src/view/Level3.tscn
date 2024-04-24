@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://djccl8w3otjc0"]
+[gd_scene load_steps=15 format=3 uid="uid://djccl8w3otjc0"]
 
 [ext_resource type="Texture2D" uid="uid://dh5u3aim0ijo" path="res://Landscape.png" id="1_6sxag"]
 [ext_resource type="Script" path="res://Level3.gd" id="1_h0tmf"]
@@ -6,18 +6,19 @@
 [ext_resource type="PackedScene" uid="uid://dvje4v3m2w03o" path="res://tractor.tscn" id="3_2enbh"]
 [ext_resource type="PackedScene" uid="uid://cx46yqg3fftyg" path="res://Alien.tscn" id="4_cmt13"]
 [ext_resource type="Texture2D" uid="uid://balpm3y75ute5" path="res://ufo.png" id="4_o1as8"]
-[ext_resource type="Script" path="res://Alien3.gd" id="5_k5ylx"]
+[ext_resource type="Script" path="res://UFO HP.gd" id="6_64huj"]
 [ext_resource type="Script" path="res://Score.gd" id="7_5fgyt"]
+[ext_resource type="AudioStream" uid="uid://cv4b5yq2mn37j" path="res://music/CLANK.mp3" id="7_ajf0y"]
 [ext_resource type="Script" path="res://TutorialHUD.gd" id="7_oheig"]
 [ext_resource type="AudioStream" uid="uid://clne275le01u8" path="res://music/lv3.mp3" id="10_jm5su"]
 [ext_resource type="AudioStream" uid="uid://dy7r5pkvtms7m" path="res://music/splat.mp3" id="11_xs5bk"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_h028u"]
-radius = 69.0072
+[sub_resource type="CircleShape2D" id="CircleShape2D_5b3bj"]
+radius = 42.0476
 
 [sub_resource type="Curve2D" id="Curve2D_5m3hx"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 1600, 18, 0, 0, 0, 0, 1592, 1586, 0, 0, 0, 0, 0, 1586, 0, 0, 0, 0, 0, 10)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 1609, 3, 0, 0, 0, 0, 1592, 1586, 0, 0, 0, 0, 0, 1586, 0, 0, 0, 0, 0, 10)
 }
 point_count = 5
 
@@ -32,20 +33,35 @@ scale = Vector2(0.64879, 0.640524)
 texture = ExtResource("1_6sxag")
 
 [node name="UFO" type="Area2D" parent="."]
-position = Vector2(100, 339)
+position = Vector2(1116, 1001)
 script = ExtResource("2_hii0u")
+metadata/_edit_group_ = true
 
 [node name="Ufo" type="Sprite2D" parent="UFO"]
-position = Vector2(1182, -144.625)
-scale = Vector2(0.183065, 0.135988)
+position = Vector2(222, 42)
+scale = Vector2(0.109274, 0.0811735)
 texture = ExtResource("4_o1as8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UFO"]
-position = Vector2(1191, -137)
-shape = SubResource("CircleShape2D_h028u")
+position = Vector2(224, 47)
+shape = SubResource("CircleShape2D_5b3bj")
+
+[node name="ufoHealth" type="Node" parent="UFO"]
+script = ExtResource("6_64huj")
+
+[node name="ufoHP" type="Label" parent="UFO/ufoHealth"]
+offset_left = 55.0
+offset_right = 1593.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 2
+
+[node name="CLANK" type="AudioStreamPlayer2D" parent="UFO"]
+stream = ExtResource("7_ajf0y")
 
 [node name="Tractor3" parent="." instance=ExtResource("3_2enbh")]
-position = Vector2(472, 1076)
+position = Vector2(356, 1228)
+metadata/_edit_group_ = true
 
 [node name="Score" type="Node" parent="Tractor3"]
 script = ExtResource("7_5fgyt")
@@ -58,10 +74,6 @@ theme_override_font_sizes/font_size = 64
 [node name="SPLAT" type="AudioStreamPlayer2D" parent="Tractor3"]
 position = Vector2(-472, -1076)
 stream = ExtResource("11_xs5bk")
-
-[node name="Alien" parent="." instance=ExtResource("4_cmt13")]
-position = Vector2(1167, 1046)
-script = ExtResource("5_k5ylx")
 
 [node name="Tutorial3HUD" type="CanvasLayer" parent="."]
 process_mode = 2
@@ -76,7 +88,7 @@ theme_override_font_sizes/font_size = 64
 text = "Level 3
 
 Quickly,
-run over all the aliens 
+run over the aliens 
 and destroy their mothership!"
 horizontal_alignment = 1
 
@@ -96,7 +108,7 @@ curve = SubResource("Curve2D_5m3hx")
 
 [node name="SpawnFollow" type="PathFollow2D" parent="SpawnPath"]
 position = Vector2(0, 10)
-rotation = 0.00499996
+rotation = -0.0043505
 
 [node name="LV3" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_jm5su")

@@ -18,37 +18,6 @@ size = Vector2(75, 100)
 position = Vector2(0, -2)
 script = ExtResource("1_msfka")
 
-[node name="Landscape" type="Sprite2D" parent="."]
-position = Vector2(798, 801)
-scale = Vector2(0.643145, 0.644556)
-texture = ExtResource("1_0q8aa")
-
-[node name="Farmhouse" type="Area2D" parent="."]
-script = ExtResource("3_xtnfe")
-
-[node name="Farmhouse" type="Sprite2D" parent="Farmhouse"]
-position = Vector2(1313, 264)
-scale = Vector2(0.334274, 0.337903)
-texture = ExtResource("4_sejto")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Farmhouse"]
-position = Vector2(1144.5, 280)
-shape = SubResource("RectangleShape2D_2kmhi")
-
-[node name="Farmhand" parent="." instance=ExtResource("5_u7kou")]
-position = Vector2(530, 768)
-
-[node name="Health" type="Node" parent="Farmhand"]
-script = ExtResource("5_hgufq")
-
-[node name="Lives" type="Label" parent="Farmhand/Health"]
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 64
-
-[node name="Alien" parent="." instance=ExtResource("4_4hwvj")]
-script = ExtResource("2_1fqjg")
-
 [node name="Tutorial1HUD" type="CanvasLayer" parent="."]
 process_mode = 2
 script = ExtResource("7_2prp8")
@@ -75,8 +44,66 @@ offset_bottom = 816.0
 theme_override_font_sizes/font_size = 64
 text = "Begin"
 
+[node name="Landscape" type="Sprite2D" parent="."]
+position = Vector2(798, 801)
+scale = Vector2(0.643145, 0.644556)
+texture = ExtResource("1_0q8aa")
+
 [node name="LV1" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_f7m4h")
 
-[connection signal="area_entered" from="Farmhouse" to="Farmhouse" method="_on_area_entered"]
+[node name="Farmhouse" type="Area2D" parent="."]
+position = Vector2(51, -38)
+script = ExtResource("3_xtnfe")
+metadata/_edit_group_ = true
+
+[node name="Farmhouse" type="Sprite2D" parent="Farmhouse"]
+position = Vector2(1313, 264)
+scale = Vector2(0.334274, 0.337903)
+texture = ExtResource("4_sejto")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Farmhouse"]
+position = Vector2(1144.5, 280)
+shape = SubResource("RectangleShape2D_2kmhi")
+
+[node name="Farmhand" parent="." instance=ExtResource("5_u7kou")]
+position = Vector2(364, 1264)
+
+[node name="Health" type="Node" parent="Farmhand"]
+script = ExtResource("5_hgufq")
+
+[node name="Lives" type="Label" parent="Farmhand/Health"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 64
+
+[node name="Alien" parent="." instance=ExtResource("4_4hwvj")]
+position = Vector2(1432, 1381)
+script = ExtResource("2_1fqjg")
+
+[node name="Alien2" parent="." instance=ExtResource("4_4hwvj")]
+position = Vector2(228, 688)
+script = ExtResource("2_1fqjg")
+
+[node name="Alien3" parent="." instance=ExtResource("4_4hwvj")]
+position = Vector2(726, 244)
+script = ExtResource("2_1fqjg")
+
+[node name="Alien4" parent="." instance=ExtResource("4_4hwvj")]
+position = Vector2(1383, 756)
+script = ExtResource("2_1fqjg")
+
+[node name="Alien5" parent="." instance=ExtResource("4_4hwvj")]
+position = Vector2(1167, 919)
+script = ExtResource("2_1fqjg")
+
+[node name="Alien6" parent="." instance=ExtResource("4_4hwvj")]
+position = Vector2(593, 919)
+script = ExtResource("2_1fqjg")
+
+[node name="Alien7" parent="." instance=ExtResource("4_4hwvj")]
+position = Vector2(1070, 427)
+script = ExtResource("2_1fqjg")
+
 [connection signal="pressed" from="Tutorial1HUD/Button" to="Tutorial1HUD" method="_on_button_pressed"]
+[connection signal="area_entered" from="Farmhouse" to="Farmhouse" method="_on_area_entered"]
