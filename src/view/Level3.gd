@@ -7,9 +7,6 @@ func _ready():
 	$SpawnTimer.start()
 	$LV3.play()
 
-func _process(delta):
-	pass
-
 func _on_spawn_timer_timeout():
 	var al = alien_scene.instantiate()
 	al.set_script(sc)
