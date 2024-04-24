@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://djccl8w3otjc0"]
+[gd_scene load_steps=14 format=3 uid="uid://djccl8w3otjc0"]
 
 [ext_resource type="Texture2D" uid="uid://dh5u3aim0ijo" path="res://Landscape.png" id="1_6sxag"]
 [ext_resource type="Script" path="res://Level3.gd" id="1_h0tmf"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Score.gd" id="7_5fgyt"]
 [ext_resource type="Script" path="res://TutorialHUD.gd" id="7_oheig"]
 [ext_resource type="AudioStream" uid="uid://clne275le01u8" path="res://music/lv3.mp3" id="10_jm5su"]
+[ext_resource type="AudioStream" uid="uid://dy7r5pkvtms7m" path="res://music/splat.mp3" id="11_xs5bk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h028u"]
 radius = 69.0072
@@ -53,6 +54,10 @@ script = ExtResource("7_5fgyt")
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 64
+
+[node name="SPLAT" type="AudioStreamPlayer2D" parent="Tractor3"]
+position = Vector2(-472, -1076)
+stream = ExtResource("11_xs5bk")
 
 [node name="Alien" parent="." instance=ExtResource("4_cmt13")]
 position = Vector2(1167, 1046)
