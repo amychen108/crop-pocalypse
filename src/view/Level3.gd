@@ -20,7 +20,7 @@ func _on_spawn_timer_timeout():
 	
 	direction += randf_range(-PI/4, PI/4)
 	
-	var velocity = Vector2(randf_range(500, 800), 0)
+	var velocity = Vector2(randf_range(500, 700), 0)
 	al.velocity = velocity.rotated(direction)
 	
 	add_child(al)

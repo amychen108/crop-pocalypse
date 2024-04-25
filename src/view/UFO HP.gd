@@ -1,6 +1,6 @@
 extends Node
 
-var HP = 1
+var HP = 4
 var scene_tree
 
 func _ready():

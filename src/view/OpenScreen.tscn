@@ -10,6 +10,29 @@
 position = Vector2(-6, -3)
 script = ExtResource("1_2bfod")
 
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_xh8j7")
+
+[node name="highScores" type="Node" parent="."]
+script = ExtResource("5_q00lg")
+
+[node name="scores" type="Label" parent="highScores"]
+offset_left = 804.0
+offset_top = 21.0
+offset_right = 878.0
+offset_bottom = 109.0
+theme_override_constants/line_spacing = -15
+theme_override_font_sizes/font_size = 48
+
+[node name="Button2" type="Button" parent="highScores"]
+visible = false
+offset_left = 596.0
+offset_top = 81.0
+offset_right = 791.0
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 20
+text = "Reset High Scores"
+
 [node name="OpenScreen" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(809, 702)
@@ -26,36 +49,13 @@ theme_override_font_sizes/font_size = 48
 text = "Start"
 script = ExtResource("2_3hodk")
 
-[node name="BGM" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_xh8j7")
-
 [node name="highScoresLabel" type="Label" parent="."]
 visible = false
-offset_left = 431.0
-offset_top = 254.0
-offset_right = 997.0
-offset_bottom = 342.0
-theme_override_font_sizes/font_size = 64
+offset_left = 517.0
+offset_top = 23.0
+offset_right = 1083.0
+offset_bottom = 111.0
+theme_override_font_sizes/font_size = 48
 text = "High Scores:"
-
-[node name="highScores" type="Node" parent="."]
-script = ExtResource("5_q00lg")
-
-[node name="scores" type="Label" parent="highScores"]
-offset_left = 818.0
-offset_top = 251.0
-offset_right = 892.0
-offset_bottom = 339.0
-theme_override_constants/line_spacing = -15
-theme_override_font_sizes/font_size = 64
-
-[node name="Button2" type="Button" parent="highScores"]
-visible = false
-offset_left = 481.0
-offset_top = 346.0
-offset_right = 676.0
-offset_bottom = 387.0
-theme_override_font_sizes/font_size = 20
-text = "Reset High Scores"
 
 [connection signal="pressed" from="highScores/Button2" to="highScores" method="_on_button_2_pressed"]

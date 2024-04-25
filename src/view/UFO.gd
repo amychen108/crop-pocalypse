@@ -6,7 +6,7 @@ var scoreLabel
 var healthLabel
 var highScores
 var lastSpawn = 0
-var scoreInterval = 5
+var scoreInterval = 11
 var flag = 0
 
 func _ready():

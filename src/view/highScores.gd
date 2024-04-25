@@ -11,7 +11,7 @@ func _ready():
 
 func writeScores():
 	if get_tree().current_scene.name == "openScene":
-		$scores.text = str(highScores[0]) + str('\n') + str(highScores[1]) + str('\n') + str(highScores[2])
+		$scores.text = str(highScores[0]) + str(', ') + str(highScores[1]) + str(', ') + str(highScores[2])
 		
 func getScores():
 	return highScores
