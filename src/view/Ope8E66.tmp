@@ -17,7 +17,6 @@ scale = Vector2(0.641129, 0.554032)
 texture = ExtResource("1_gp811")
 
 [node name="Button" type="Button" parent="."]
-visible = false
 offset_left = 673.0
 offset_top = 672.0
 offset_right = 940.0
@@ -25,6 +24,15 @@ offset_bottom = 767.0
 theme_override_font_sizes/font_size = 48
 text = "Start"
 script = ExtResource("2_3hodk")
+
+[node name="Button2" type="Button" parent="."]
+visible = false
+offset_left = 487.0
+offset_top = 349.0
+offset_right = 682.0
+offset_bottom = 390.0
+theme_override_font_sizes/font_size = 20
+text = "Reset High Scores"
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_xh8j7")
@@ -49,13 +57,4 @@ offset_bottom = 339.0
 theme_override_constants/line_spacing = -15
 theme_override_font_sizes/font_size = 64
 
-[node name="Button2" type="Button" parent="highScores"]
-visible = false
-offset_left = 481.0
-offset_top = 346.0
-offset_right = 676.0
-offset_bottom = 387.0
-theme_override_font_sizes/font_size = 20
-text = "Reset High Scores"
-
-[connection signal="pressed" from="highScores/Button2" to="highScores" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button2" to="highScores" method="_on_button_2_pressed"]

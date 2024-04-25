@@ -6,3 +6,4 @@ func _ready():
 		$OpenScreen.visible = true
 		$highScoresLabel.visible = true
 		$Button.visible = true
+		$highScores/Button2.visible = true
