@@ -3,7 +3,8 @@ extends Node
 var highScores = [0,0,0]
 
 func _ready():
-	highScores = loadScores()
+	if FileAccess.file_exists("user://saveScores.dat"):
+		highScores = loadScores()
 	highScores.sort()
 	highScores.reverse()
 	highScores = [highScores[0]] + [highScores[1]] + [highScores[2]]
