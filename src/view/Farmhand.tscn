@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cvye1tb86u1k5"]
 
-[ext_resource type="Script" path="res://Farmhand.gd" id="1_lqcot"]
+[ext_resource type="Script" path="res://Farmhand.gd" id="1_5qtic"]
 [ext_resource type="Texture2D" uid="uid://btyefbsxdirug" path="res://Farmhand.png" id="2_uakei"]
 [ext_resource type="AudioStream" uid="uid://bxgkg47h6bbqv" path="res://music/OOF.mp3" id="3_6enu0"]
 
@@ -9,7 +9,7 @@ radius = 48.0
 height = 224.0
 
 [node name="Farmhand" type="Area2D"]
-script = ExtResource("1_lqcot")
+script = ExtResource("1_5qtic")
 
 [node name="Farmhand" type="Sprite2D" parent="."]
 position = Vector2(30, -1)
