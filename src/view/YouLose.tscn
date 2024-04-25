@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://RestartButton.gd" id="2_xrttt"]
 [ext_resource type="AudioStream" uid="uid://cj10ibp81icrv" path="res://music/defeat.mp3" id="4_k2on6"]
 
-[node name="Node2D" type="Node2D"]
+[node name="loseScene" type="Node2D"]
 position = Vector2(-6, -3)
 script = ExtResource("1_0u53o")
 

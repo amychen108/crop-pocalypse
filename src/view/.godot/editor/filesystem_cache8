@@ -1,12 +1,13 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1713939076
+::res://::1714001553
 Alien1.gd::GDScript::-1::1713910688::0::1::::<>CharacterBody2D<>::
 Alien2.gd::GDScript::-1::1713910688::0::1::::<>CharacterBody2D<>::
 Alien3.gd::GDScript::-1::1713917491::0::1::::<>CharacterBody2D<>::
 Alien.png::CompressedTexture2D::3762025773014647496::1713910688::1713910773::1::::<><>::
 Alien.tscn::PackedScene::6448977662679679994::1713934795::0::1::::<><>::uid://btumarfm3xo0g::::res://Alien.png<>uid://ccxokpnt075cp::::res://AlienN.png
 AlienN.png::CompressedTexture2D::4961568447674104699::1713910688::1713910773::1::::<><>::
-ButtonMenu.gd::GDScript::-1::1713934736::0::1::::<>Button<>::
+ButtonMain.gd::GDScript::-1::1713998683::0::1::::<>Button<>::
+ButtonMenu.gd::GDScript::-1::1713998243::0::1::::<>Button<>::
 Farmer.gd::GDScript::-1::1713935798::0::1::::<>Area2D<>::
 Farmer.png::CompressedTexture2D::8433776173521753353::1713910688::1713910773::1::::<><>::
 Farmer.tscn::PackedScene::2518616301044841391::1713932304::0::1::::<><>::res://Farmer.gd<>uid://dsfncc71x78kb::::res://Farmer.png<>uid://bxgkg47h6bbqv::::res://music/OOF.mp3
@@ -16,32 +17,33 @@ Farmhand.tscn::PackedScene::6296642449524979018::1713932305::0::1::::<><>::res:/
 Farmhouse.gd::GDScript::-1::1713936051::0::1::::<>Area2D<>::
 Farmhouse.png::CompressedTexture2D::7348193998405393483::1713910688::1713910773::1::::<><>::
 Health.gd::GDScript::-1::1713910688::0::1::::<>Node<>::
+highScores.gd::GDScript::-1::1714001449::0::1::::<>Node<>::
 Landscape.png::CompressedTexture2D::226875871887923048::1713910688::1713910773::1::::<><>::
 Level1.gd::GDScript::-1::1713916334::0::1::::<>Node2D<>::
 Level1.tscn::PackedScene::1563204657555564052::1713934795::0::1::::<><>::uid://dh5u3aim0ijo::::res://Landscape.png<>res://Level1.gd<>res://Alien1.gd<>res://Farmhouse.gd<>uid://cx46yqg3fftyg::::res://Alien.tscn<>uid://dcxrxf5nnwxy6::::res://Farmhouse.png<>res://Health.gd<>uid://cvye1tb86u1k5::::res://Farmhand.tscn<>res://TutorialHUD.gd<>uid://cvijyvg5d2s5t::::res://music/lv1.mp3
 Level2.gd::GDScript::-1::1713916565::0::1::::<>Node2D<>::
 Level2.tscn::PackedScene::7563005760540945649::1713932304::0::1::::<><>::res://Level2.gd<>uid://dh5u3aim0ijo::::res://Landscape.png<>res://Tractor2.gd<>uid://bb5biilmrib2f::::res://Farmer.tscn<>uid://tgp3ogu84cnp::::res://Tractor.png<>uid://cx46yqg3fftyg::::res://Alien.tscn<>res://Health.gd<>res://Alien2.gd<>res://TutorialHUD.gd<>uid://ckghigcqufr6u::::res://music/lv2.mp3<>uid://dcxrxf5nnwxy6::::res://Farmhouse.png
-Level3.gd::GDScript::-1::1713916831::0::1::::<>Node2D<>::
-Level3.tscn::PackedScene::7795233245596110713::1713936094::0::1::::<><>::uid://dh5u3aim0ijo::::res://Landscape.png<>res://Level3.gd<>res://UFO.gd<>uid://dvje4v3m2w03o::::res://tractor.tscn<>uid://cx46yqg3fftyg::::res://Alien.tscn<>uid://balpm3y75ute5::::res://ufo.png<>res://UFO HP.gd<>res://Score.gd<>uid://cv4b5yq2mn37j::::res://music/CLANK.mp3<>res://TutorialHUD.gd<>uid://clne275le01u8::::res://music/lv3.mp3<>uid://dy7r5pkvtms7m::::res://music/splat.mp3
-OpenScreen.gd::GDScript::-1::1713914797::0::1::::<>Node2D<>::
+Level3.gd::GDScript::-1::1713939108::0::1::::<>Node2D<>::
+Level3.tscn::PackedScene::7795233245596110713::1714001526::0::1::::<><>::uid://dh5u3aim0ijo::::res://Landscape.png<>res://Level3.gd<>res://UFO.gd<>uid://dvje4v3m2w03o::::res://tractor.tscn<>uid://cx46yqg3fftyg::::res://Alien.tscn<>uid://balpm3y75ute5::::res://ufo.png<>res://UFO HP.gd<>res://Score.gd<>uid://cv4b5yq2mn37j::::res://music/CLANK.mp3<>res://TutorialHUD.gd<>uid://clne275le01u8::::res://music/lv3.mp3<>uid://dy7r5pkvtms7m::::res://music/splat.mp3
+OpenScreen.gd::GDScript::-1::1713999895::0::1::::<>Node2D<>::
 OpenScreen.png::CompressedTexture2D::6416140052325017134::1713910688::1713910773::1::::<><>::
-OpenScreen.tscn::PackedScene::1720026546987613652::1713934795::0::1::::<><>::res://OpenScreen.gd<>uid://cxoa5h8fpwcqg::::res://OpenScreen.png<>res://ButtonMenu.gd<>uid://dbbkjldgqy8ni::::res://music/bgmTitle.mp3
+OpenScreen.tscn::PackedScene::1720026546987613652::1714001526::0::1::::<><>::res://OpenScreen.gd<>uid://cxoa5h8fpwcqg::::res://OpenScreen.png<>res://ButtonMenu.gd<>uid://dbbkjldgqy8ni::::res://music/bgmTitle.mp3<>res://highScores.gd
 RestartButton.gd::GDScript::-1::1713910688::0::1::::<>Button<>::
 Score.gd::GDScript::-1::1713918666::0::1::::<>Node<>::
 testFarmer.png::CompressedTexture2D::6243721758805127511::1713910688::1713910688::1::::<><>::
 Tractor2.gd::GDScript::-1::1713935889::0::1::::<>Area2D<>::
 Tractor3.gd::GDScript::-1::1713934688::0::1::::<>Area2D<>::
 Tractor.png::CompressedTexture2D::1346935798317486665::1713910688::1713910773::1::::<><>::
-tractor.tscn::PackedScene::8652102970085906442::1713934795::0::1::::<><>::res://Tractor3.gd<>uid://tgp3ogu84cnp::::res://Tractor.png
+tractor.tscn::PackedScene::8652102970085906442::1714001526::0::1::::<><>::res://Tractor3.gd<>uid://tgp3ogu84cnp::::res://Tractor.png
 TractorPart.png::CompressedTexture2D::4526636611356764500::1713910688::1713910773::1::::<><>::
 TutorialHUD.gd::GDScript::-1::1713936051::0::1::::<>CanvasLayer<>::
-UFO HP.gd::GDScript::-1::1713934439::0::1::::<>Node<>::
-UFO.gd::GDScript::-1::1713936094::0::1::::<>Area2D<>::
+UFO HP.gd::GDScript::-1::1713998404::0::1::::<>Node<>::
+UFO.gd::GDScript::-1::1714001518::0::1::::<>Area2D<>::
 ufo.png::CompressedTexture2D::2410062532630056178::1713910688::1713910772::1::::<><>::
 YouLose.gd::GDScript::-1::1713915681::0::1::::<>Node2D<>::
-YouLose.tscn::PackedScene::5456766580319846794::1713920197::0::1::::<><>::res://YouLose.gd<>uid://cxoa5h8fpwcqg::::res://OpenScreen.png<>res://RestartButton.gd<>uid://cj10ibp81icrv::::res://music/defeat.mp3
+YouLose.tscn::PackedScene::5456766580319846794::1714001526::0::1::::<><>::res://YouLose.gd<>uid://cxoa5h8fpwcqg::::res://OpenScreen.png<>res://RestartButton.gd<>uid://cj10ibp81icrv::::res://music/defeat.mp3
 YouWin.gd::GDScript::-1::1713915768::0::1::::<>Node2D<>::
-YouWin.tscn::PackedScene::5199770478160530178::1713934796::0::1::::<><>::res://YouWin.gd<>uid://cxoa5h8fpwcqg::::res://OpenScreen.png<>res://ButtonMenu.gd<>uid://8a8x8nt50uij::::res://music/victory.mp3
+YouWin.tscn::PackedScene::5199770478160530178::1714001526::0::1::::<><>::res://YouWin.gd<>uid://cxoa5h8fpwcqg::::res://OpenScreen.png<>res://ButtonMenu.gd<>uid://8a8x8nt50uij::::res://music/victory.mp3<>res://ButtonMain.gd
 ::res://music/::1713935086
 bgmTitle.mp3::AudioStreamMP3::7232139097230444678::1713914649::1713914649::1::::<><>::
 CLANK.mp3::AudioStreamMP3::6306789615983140033::1713935060::1713935085::1::::<><>::
