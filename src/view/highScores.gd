@@ -6,6 +6,7 @@ func _ready():
 	highScores = loadScores()
 	highScores.sort()
 	highScores.reverse()
+	highScores = [highScores[0]] + [highScores[1]] + [highScores[2]]
 	writeScores()
 
 func writeScores():

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cgc2pv37tn48u"]
 
-[ext_resource type="Script" path="res://YouWin.gd" id="1_2as62"]
+[ext_resource type="Script" path="res://WinLose.gd" id="1_oawv2"]
 [ext_resource type="Texture2D" uid="uid://cxoa5h8fpwcqg" path="res://OpenScreen.png" id="1_x0m1q"]
 [ext_resource type="Script" path="res://ButtonMenu.gd" id="2_nexmw"]
 [ext_resource type="AudioStream" uid="uid://8a8x8nt50uij" path="res://music/victory.mp3" id="4_il5rd"]
@@ -8,7 +8,7 @@
 
 [node name="winScene" type="Node2D"]
 position = Vector2(-6, -3)
-script = ExtResource("1_2as62")
+script = ExtResource("1_oawv2")
 
 [node name="OpenScreen" type="Sprite2D" parent="."]
 position = Vector2(809, 702)

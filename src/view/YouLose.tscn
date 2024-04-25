@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cj0kfbqepq32u"]
 
-[ext_resource type="Script" path="res://YouLose.gd" id="1_0u53o"]
+[ext_resource type="Script" path="res://WinLose.gd" id="1_0u53o"]
 [ext_resource type="Texture2D" uid="uid://cxoa5h8fpwcqg" path="res://OpenScreen.png" id="1_n14a5"]
 [ext_resource type="Script" path="res://RestartButton.gd" id="2_xrttt"]
 [ext_resource type="AudioStream" uid="uid://cj10ibp81icrv" path="res://music/defeat.mp3" id="4_k2on6"]
