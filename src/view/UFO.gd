@@ -33,7 +33,6 @@ func _on_area_entered(node):
 		flag = 0
 		if healthLabel.get_health() == 0:
 			highScores.addScore(scoreLabel.get_score())
-			
 			var file = FileAccess.open("user://saveScores.dat", FileAccess.WRITE)
 			file.store_var(highScores.getScores())
 			get_tree().change_scene_to_file("res://YouWin.tscn") 
@@ -46,6 +45,5 @@ func _physics_process(delta):
 	if flag == 1:
 		position.x += 4
 		position.y += 18
-		
-func save(score):
-	pass
+
+
