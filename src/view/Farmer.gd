@@ -37,7 +37,7 @@ func _on_body_entered(body):
 			$OOF.play()
 
 		if($Hurtbox.disabled == true && $hitTimer.is_stopped() == true): #farmer is attacking and attack cooldown has elapsed
-			$hitTimer.start()
+			$hitTimer.start() #farmer attacks have a cooldown to prevent mashing
 			$farmerHit.play()
 			body.takeHit()
 
