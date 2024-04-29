@@ -3,15 +3,15 @@ extends Node
 var highScores = [0,0,0]
 
 func _ready():
-	if FileAccess.file_exists("user://saveScores.dat"):
+	if FileAccess.file_exists("user://saveScores.dat"): #load scores from file if file exists
 		highScores = loadScores()
 	highScores.sort()
 	highScores.reverse()
-	highScores = [highScores[0]] + [highScores[1]] + [highScores[2]]
+	highScores = [highScores[0]] + [highScores[1]] + [highScores[2]] #only display top 3 scores
 	writeScores()
 
 func writeScores():
-	if get_tree().current_scene.name == "openScene":
+	if get_tree().current_scene.name == "openScene": #should only show on open screen
 		$scores.text = str(highScores[0]) + str(', ') + str(highScores[1]) + str(', ') + str(highScores[2])
 		
 func getScores():

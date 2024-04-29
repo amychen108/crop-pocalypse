@@ -7,10 +7,9 @@ func _ready():
 	scene_tree = get_tree()
 	player = get_node("/root/Level2/Farmer")
 	
-	
 func _process(delta):
 	$Parts.text = str(player.truckParts) + " / 5"
-	if(player.truckParts == 1):
+	if(player.truckParts == 1): #peel back each grey truck layer for visual effect
 		$GreyTractor0.hide()
 	if(player.truckParts == 2):
 		$GreyTractor1.hide()
@@ -20,8 +19,8 @@ func _process(delta):
 		$GreyTractor3.hide()
 	if(player.truckParts == 5):
 		$GreyTractor4.hide()
-		$Parts.set("theme_override_colors/font_color", "YELLOW")
+		$Parts.set("theme_override_colors/font_color", "YELLOW") #gold color to indicate complete
 	
 func _on_area_entered(area):
-	if area.name == "Farmer" && player.truckParts >= 5:
+	if (area.name == "Farmer") && (player.truckParts >= 5):
 		get_tree().change_scene_to_file("res://Level3.tscn") 

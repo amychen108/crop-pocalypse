@@ -8,10 +8,10 @@ func _ready():
 	$LV3.play()
 
 func _on_spawn_timer_timeout():
-	var al = alien_scene.instantiate()
+	var al = alien_scene.instantiate() #create alien children
 	al.set_script(sc)
 	
-	var al_spawn_loc = $SpawnPath/SpawnFollow
+	var al_spawn_loc = $SpawnPath/SpawnFollow #set movement direction and move
 	al_spawn_loc.progress_ratio = randf()
 	
 	var direction = al_spawn_loc.rotation + PI / 2

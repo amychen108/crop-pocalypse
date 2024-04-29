@@ -16,7 +16,7 @@ func _physics_process(delta):
 		input.x = n
 		
 	position += input
-	position.x = clamp(position.x, 0, screensize.x)
+	position.x = clamp(position.x, 0, screensize.x) #prevents player from running offscreen
 	position.y = clamp(position.y, 0, screensize.y)
 
 func _on_body_entered(body):

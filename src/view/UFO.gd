@@ -20,10 +20,10 @@ func _ready():
 	highScores = get_node("/root/Level3/UFO/openScene/highScores")
 
 func _process(delta):
-	if scoreLabel.get_score() >= lastSpawn + scoreInterval:
+	if scoreLabel.get_score() >= lastSpawn + scoreInterval: #UFO spawns at score intervals
 		lastSpawn += scoreInterval
 		flag = 1
-		position.x = randf_range(-500, 1200)
+		position.x = randf_range(-500, 1200) 
 		position.y = -200
 		
 func _on_area_entered(node):
@@ -32,16 +32,16 @@ func _on_area_entered(node):
 		$CLANK.play()
 		flag = 0
 		if healthLabel.get_health() == 0:
-			highScores.addScore(scoreLabel.get_score())
+			highScores.addScore(scoreLabel.get_score()) #save high score
 			highScores.saveScores()
 			get_tree().change_scene_to_file("res://YouWin.tscn") 
 
 func _physics_process(delta):
-	if flag == 0:
+	if flag == 0: #when UFO is hit, it retreats
 		if position.y > -200:
 			position.y+= -60
 		
-	if flag == 1:
+	if flag == 1: #when UFO spawns, it drifts diagonally downward
 		position.x += 4
 		position.y += 18
 

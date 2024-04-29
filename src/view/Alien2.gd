@@ -1,15 +1,19 @@
 extends CharacterBody2D
 
 var player
-var alienHP
+var alienHP = 3
+var hurtSound
+var hitflashAnim
 
 @export var motor_scene: PackedScene
 const motor = preload("res://Motor.tscn")
 
 func _ready():
 	player = get_node("/root/Level2/Farmer")
+	hurtSound = get_node("/root/Level2/alienHurt")
+	add_child(hurtSound)
 	$AlienN.visible = false
-	alienHP = 3
+	hitflashAnim = $hitflashAnim
 	
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
@@ -17,13 +21,14 @@ func _physics_process(delta):
 	move_and_slide()
 
 func takeHit():
-	print("alien OUCH")
 	alienHP -= 1
+	hitflashAnim.play("hitflash")
+	hurtSound.play()
 	if(alienHP == 0):
 		die()
 
 func die():
-	var newMotor = motor.instantiate()
+	var newMotor = motor.instantiate() #replace alien with motor part to pick up
 	get_parent().add_child(newMotor)
 	newMotor.global_position = global_position
 	queue_free()

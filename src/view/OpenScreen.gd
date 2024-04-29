@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready():
-	if get_tree().current_scene.name == "openScene":
+	if get_tree().current_scene.name == "openScene": #only show on start menu
 		$BGM.play()
 		$OpenScreen.visible = true
 		$highScoresLabel.visible = true
