@@ -23,11 +23,18 @@ func _physics_process(delta):
 	position.y = clamp(position.y, 0, screensize.y)
 	
 	if Input.is_key_pressed(KEY_SPACE):
-		print("hi")
 		$Hurtbox.disabled = true
 		$Hitbox.disabled = false
+		
 
 func _on_body_entered(body):
-	if($Hurtbox.disabled == false):
+	if($Hurtbox.disabled == false): #farmer isn't attacking
 		$Health.lose_life()
 		$OOF.play()
+		
+	if($Hurtbox.disabled == true && $hitTimer.is_stopped() == true): #farmer is attacking and attack cooldown has elapsed
+		$hitTimer.start()
+		body.takeHit()
+
+func _on_timer_timeout():
+	$hitTimer.stop()
