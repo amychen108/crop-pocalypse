@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://df0tunq0rhvfl"]
+[gd_scene load_steps=19 format=3 uid="uid://df0tunq0rhvfl"]
 
 [ext_resource type="Script" path="res://Level2.gd" id="1_i4tx7"]
 [ext_resource type="Texture2D" uid="uid://dh5u3aim0ijo" path="res://Landscape.png" id="1_n5n87"]
@@ -9,8 +9,13 @@
 [ext_resource type="Script" path="res://Health.gd" id="5_2s8kf"]
 [ext_resource type="Script" path="res://Alien2.gd" id="5_n0vd3"]
 [ext_resource type="Script" path="res://TutorialHUD.gd" id="7_6nebt"]
+[ext_resource type="Texture2D" uid="uid://cfmv5q3ui3m62" path="res://TractorGreyscale.png" id="8_xpt7x"]
+[ext_resource type="Texture2D" uid="uid://cj6vmy7lxcbns" path="res://tractorGrey1.png" id="9_a2424"]
 [ext_resource type="AudioStream" uid="uid://ckghigcqufr6u" path="res://music/lv2.mp3" id="10_6fldw"]
+[ext_resource type="Texture2D" uid="uid://cps07ui34das4" path="res://tractorGrey2.png" id="10_eldmi"]
+[ext_resource type="Texture2D" uid="uid://clnvawlogsuwv" path="res://tractorGrey3.png" id="11_d7vx0"]
 [ext_resource type="Texture2D" uid="uid://dcxrxf5nnwxy6" path="res://Farmhouse.png" id="11_kbmu4"]
+[ext_resource type="Texture2D" uid="uid://i8uo24wdxpdl" path="res://tractorGrey4.png" id="12_3bi6k"]
 [ext_resource type="PackedScene" uid="uid://c5f3x81xhkh0e" path="res://Motor.tscn" id="12_kfkw1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_71my7"]
@@ -25,23 +30,26 @@ process_mode = 2
 script = ExtResource("7_6nebt")
 
 [node name="Label" type="Label" parent="Tutorial2HUD"]
-offset_left = 143.0
-offset_top = 309.0
-offset_right = 1497.0
-offset_bottom = 579.0
+offset_left = 50.0
+offset_top = 425.0
+offset_right = 1609.0
+offset_bottom = 968.0
 theme_override_font_sizes/font_size = 64
 text = "Level 2
 
-Quickly,
-run to the tractor!"
+Those darn aliens have wrecked your tractor!
+Show em who's boss with your pitchfork.
+Collect the 5 parts you need to repair your tractor.
+Use Spacebar to Attack."
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_lock_ = true
 
 [node name="Button" type="Button" parent="Tutorial2HUD"]
-offset_left = 677.0
-offset_top = 689.0
-offset_right = 982.0
-offset_bottom = 785.0
+offset_left = 680.0
+offset_top = 983.0
+offset_right = 985.0
+offset_bottom = 1079.0
 theme_override_font_sizes/font_size = 64
 text = "Begin"
 
@@ -53,6 +61,7 @@ z_index = -2
 position = Vector2(808, 792)
 scale = Vector2(0.651607, 0.637096)
 texture = ExtResource("1_n5n87")
+metadata/_edit_lock_ = true
 
 [node name="Farmhouse2" type="Sprite2D" parent="."]
 z_index = -1
@@ -64,13 +73,46 @@ texture = ExtResource("11_kbmu4")
 script = ExtResource("2_g2uod")
 
 [node name="Tractor" type="Sprite2D" parent="Tractor2"]
-position = Vector2(1356.88, 247)
-scale = Vector2(0.219254, 0.233871)
+position = Vector2(1352, 265)
+scale = Vector2(0.265197, 0.265197)
 texture = ExtResource("4_kum5m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tractor2"]
 position = Vector2(1374, 134.75)
 shape = SubResource("RectangleShape2D_71my7")
+
+[node name="GreyTractor0" type="Sprite2D" parent="Tractor2"]
+position = Vector2(1352, 265)
+scale = Vector2(0.265197, 0.265197)
+texture = ExtResource("8_xpt7x")
+
+[node name="GreyTractor1" type="Sprite2D" parent="Tractor2"]
+position = Vector2(1352, 265)
+scale = Vector2(0.265197, 0.265197)
+texture = ExtResource("9_a2424")
+
+[node name="GreyTractor2" type="Sprite2D" parent="Tractor2"]
+position = Vector2(1352, 265)
+scale = Vector2(0.265197, 0.265197)
+texture = ExtResource("10_eldmi")
+
+[node name="GreyTractor3" type="Sprite2D" parent="Tractor2"]
+position = Vector2(1352, 265)
+scale = Vector2(0.265197, 0.265197)
+texture = ExtResource("11_d7vx0")
+
+[node name="GreyTractor4" type="Sprite2D" parent="Tractor2"]
+position = Vector2(1352, 265)
+scale = Vector2(0.265197, 0.265197)
+texture = ExtResource("12_3bi6k")
+
+[node name="Parts" type="Label" parent="Tractor2"]
+offset_left = 1222.0
+offset_top = 116.0
+offset_right = 1407.0
+offset_bottom = 253.0
+theme_override_font_sizes/font_size = 100
+text = "0 / 5"
 
 [node name="Farmer" parent="." instance=ExtResource("3_dc2r7")]
 position = Vector2(150, 1467)
@@ -87,27 +129,27 @@ theme_override_font_sizes/font_size = 64
 [node name="hitTimer" type="Timer" parent="Farmer"]
 
 [node name="Alien" parent="." instance=ExtResource("4_pe3a8")]
-position = Vector2(742, 321)
+position = Vector2(762, 216)
 script = ExtResource("5_n0vd3")
 motor_scene = ExtResource("12_kfkw1")
 
 [node name="Alien2" parent="." instance=ExtResource("4_pe3a8")]
-position = Vector2(1271, 341)
+position = Vector2(1117, 540)
 script = ExtResource("5_n0vd3")
 motor_scene = ExtResource("12_kfkw1")
 
 [node name="Alien3" parent="." instance=ExtResource("4_pe3a8")]
-position = Vector2(1344, 1180)
+position = Vector2(917, 1357)
 script = ExtResource("5_n0vd3")
 motor_scene = ExtResource("12_kfkw1")
 
 [node name="Alien4" parent="." instance=ExtResource("4_pe3a8")]
-position = Vector2(238, 608)
+position = Vector2(316, 275)
 script = ExtResource("5_n0vd3")
 motor_scene = ExtResource("12_kfkw1")
 
 [node name="Alien5" parent="." instance=ExtResource("4_pe3a8")]
-position = Vector2(1353, 619)
+position = Vector2(1496, 1135)
 script = ExtResource("5_n0vd3")
 motor_scene = ExtResource("12_kfkw1")
 

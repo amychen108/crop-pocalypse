@@ -26,6 +26,9 @@ func _physics_process(delta):
 	if Input.is_key_pressed(KEY_SPACE):
 		$Hurtbox.disabled = true
 		$Hitbox.disabled = false
+	
+	if Input.is_key_pressed(KEY_T):
+		truckParts += 1 #debugging
 
 func _on_body_entered(body):
 	if(body.is_in_group("alien")):
@@ -42,6 +45,9 @@ func _on_timer_timeout():
 	$hitTimer.stop()
 
 func _on_area_entered(area):
-	if(area.is_in_group("motor") && $Hurtbox.disabled == false): #must pick up motors with body
+	if(area.is_in_group("motor") && $Hurtbox.disabled == false): #must pick up motors with body not the pitchfork
 		truckParts += 1
 		area.queue_free()
+		
+func getParts():
+	return truckParts
