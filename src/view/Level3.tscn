@@ -1,15 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://djccl8w3otjc0"]
+[gd_scene load_steps=17 format=3 uid="uid://djccl8w3otjc0"]
 
 [ext_resource type="Texture2D" uid="uid://dh5u3aim0ijo" path="res://Landscape.png" id="1_6sxag"]
 [ext_resource type="Script" path="res://Level3.gd" id="1_h0tmf"]
 [ext_resource type="Script" path="res://UFO.gd" id="2_hii0u"]
-[ext_resource type="PackedScene" uid="uid://dvje4v3m2w03o" path="res://tractor.tscn" id="3_2enbh"]
+[ext_resource type="PackedScene" uid="uid://clursiyx4gfau" path="res://tractor.tscn" id="3_2enbh"]
 [ext_resource type="PackedScene" uid="uid://cx46yqg3fftyg" path="res://Alien.tscn" id="4_cmt13"]
 [ext_resource type="Texture2D" uid="uid://balpm3y75ute5" path="res://ufo.png" id="4_o1as8"]
 [ext_resource type="Script" path="res://UFO HP.gd" id="6_64huj"]
 [ext_resource type="Script" path="res://Score.gd" id="7_5fgyt"]
 [ext_resource type="AudioStream" uid="uid://cv4b5yq2mn37j" path="res://music/CLANK.mp3" id="7_ajf0y"]
 [ext_resource type="Script" path="res://TutorialHUD.gd" id="7_oheig"]
+[ext_resource type="Script" path="res://Health.gd" id="8_28gmp"]
+[ext_resource type="AudioStream" uid="uid://ctlfv173c7u12" path="res://music/ufoMiss.mp3" id="9_dfth3"]
 [ext_resource type="AudioStream" uid="uid://clne275le01u8" path="res://music/lv3.mp3" id="10_jm5su"]
 [ext_resource type="AudioStream" uid="uid://dy7r5pkvtms7m" path="res://music/splat.mp3" id="11_xs5bk"]
 
@@ -56,8 +58,24 @@ offset_bottom = 88.0
 theme_override_font_sizes/font_size = 64
 horizontal_alignment = 2
 
+[node name="Lives" type="Node" parent="UFO"]
+script = ExtResource("8_28gmp")
+
+[node name="Lives" type="Label" parent="UFO/Lives"]
+offset_top = 55.0
+offset_right = 173.0
+offset_bottom = 143.0
+theme_override_font_sizes/font_size = 64
+text = "Lives:"
+metadata/_edit_use_anchors_ = true
+
 [node name="CLANK" type="AudioStreamPlayer2D" parent="UFO"]
 stream = ExtResource("7_ajf0y")
+
+[node name="ufoMiss" type="AudioStreamPlayer2D" parent="UFO"]
+position = Vector2(-1116, -999)
+stream = ExtResource("9_dfth3")
+volume_db = 8.0
 
 [node name="Tractor3" parent="." instance=ExtResource("3_2enbh")]
 position = Vector2(356, 1228)
@@ -67,9 +85,11 @@ metadata/_edit_group_ = true
 script = ExtResource("7_5fgyt")
 
 [node name="Count" type="Label" parent="Tractor3/Score"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_top = -8.0
+offset_right = 189.0
+offset_bottom = 80.0
 theme_override_font_sizes/font_size = 64
+text = "Score:"
 
 [node name="SPLAT" type="AudioStreamPlayer2D" parent="Tractor3"]
 position = Vector2(-472, -1076)

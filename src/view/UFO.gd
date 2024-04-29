@@ -4,6 +4,7 @@ var scene_tree
 var scoreScene
 var scoreLabel
 var healthLabel
+var livesLabel
 var highScores
 var lastSpawn = 0
 var scoreInterval = 11
@@ -13,6 +14,7 @@ func _ready():
 	scene_tree = get_tree()
 	scoreLabel = get_node("/root/Level3/Tractor3/Score")
 	healthLabel = get_node("/root/Level3/UFO/ufoHealth")
+	livesLabel = get_node("/root/Level3/UFO/Lives")
 	
 	var scoreScene = preload("res://OpenScreen.tscn")
 	var instance = scoreScene.instantiate()
@@ -44,5 +46,12 @@ func _physics_process(delta):
 	if flag == 1: #when UFO spawns, it drifts diagonally downward
 		position.x += 4
 		position.y += 18
+		if position.y > 1750: #if off screen, player missed it
+			livesLabel.lose_life()
+			$ufoMiss.play()
+			#position.x = randf_range(-500, 1200) 
+			#position.y = -200
+			flag = 0
+			
 
 

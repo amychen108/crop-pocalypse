@@ -128,6 +128,7 @@ script = ExtResource("5_2s8kf")
 offset_right = 40.0
 offset_bottom = 88.0
 theme_override_font_sizes/font_size = 64
+metadata/_edit_use_anchors_ = true
 
 [node name="hitTimer" type="Timer" parent="Farmer"]
 
