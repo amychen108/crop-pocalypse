@@ -92,12 +92,26 @@ script = ExtResource("5_n0vd3")
 motor_scene = ExtResource("12_kfkw1")
 
 [node name="Alien2" parent="." instance=ExtResource("4_pe3a8")]
-position = Vector2(1268, 690)
+position = Vector2(1271, 341)
 script = ExtResource("5_n0vd3")
+motor_scene = ExtResource("12_kfkw1")
 
-[node name="MotorScene" parent="." instance=ExtResource("12_kfkw1")]
-position = Vector2(1767, 535)
+[node name="Alien3" parent="." instance=ExtResource("4_pe3a8")]
+position = Vector2(1344, 1180)
+script = ExtResource("5_n0vd3")
+motor_scene = ExtResource("12_kfkw1")
+
+[node name="Alien4" parent="." instance=ExtResource("4_pe3a8")]
+position = Vector2(238, 608)
+script = ExtResource("5_n0vd3")
+motor_scene = ExtResource("12_kfkw1")
+
+[node name="Alien5" parent="." instance=ExtResource("4_pe3a8")]
+position = Vector2(1353, 619)
+script = ExtResource("5_n0vd3")
+motor_scene = ExtResource("12_kfkw1")
 
 [connection signal="pressed" from="Tutorial2HUD/Button" to="Tutorial2HUD" method="_on_button_pressed"]
 [connection signal="area_entered" from="Tractor2" to="Tractor2" method="_on_area_entered"]
+[connection signal="area_entered" from="Farmer" to="Farmer" method="_on_area_entered"]
 [connection signal="timeout" from="Farmer/hitTimer" to="Farmer" method="_on_timer_timeout"]

@@ -1,6 +1,7 @@
 extends Area2D
 
-var n = 10
+var n = 7
+var truckParts = 0
 
 func _physics_process(delta):
 	var screensize = get_viewport_rect().size
@@ -25,16 +26,22 @@ func _physics_process(delta):
 	if Input.is_key_pressed(KEY_SPACE):
 		$Hurtbox.disabled = true
 		$Hitbox.disabled = false
-		
 
 func _on_body_entered(body):
-	if($Hurtbox.disabled == false): #farmer isn't attacking
-		$Health.lose_life()
-		$OOF.play()
-		
-	if($Hurtbox.disabled == true && $hitTimer.is_stopped() == true): #farmer is attacking and attack cooldown has elapsed
-		$hitTimer.start()
-		body.takeHit()
+	if(body.is_in_group("alien")):
+		if($Hurtbox.disabled == false): #farmer isn't attacking
+			$Health.lose_life()
+			$OOF.play()
+
+		if($Hurtbox.disabled == true && $hitTimer.is_stopped() == true): #farmer is attacking and attack cooldown has elapsed
+			$hitTimer.start()
+			body.takeHit()
 
 func _on_timer_timeout():
+	print("hit cooldown elapsed")
 	$hitTimer.stop()
+
+func _on_area_entered(area):
+	if(area.is_in_group("motor") && $Hurtbox.disabled == false): #must pick up motors with body
+		truckParts += 1
+		area.queue_free()

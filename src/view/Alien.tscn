@@ -7,10 +7,9 @@
 radius = 43.0
 height = 248.0
 
-[node name="Alien" type="CharacterBody2D"]
+[node name="Alien" type="CharacterBody2D" groups=["alien"]]
 position = Vector2(0, 1)
 scale = Vector2(0.8, 0.8)
-metadata/_edit_lock_ = true
 
 [node name="Alien" type="Sprite2D" parent="."]
 position = Vector2(10, -31)

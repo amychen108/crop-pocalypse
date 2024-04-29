@@ -1,6 +1,6 @@
 extends Area2D
 
-var n = 10
+var n = 7
 
 func _physics_process(delta):
 	var screensize = get_viewport_rect().size
