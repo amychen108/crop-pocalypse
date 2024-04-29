@@ -41,7 +41,7 @@ func _on_area_entered(node):
 func _physics_process(delta):
 	if flag == 0: #when UFO is hit, it retreats
 		if position.y > -300:
-			position.y+= -100
+			position.y+= -80
 		
 	if flag == 1: #when UFO spawns, it drifts diagonally downward
 		$Abductee.hide()
@@ -60,6 +60,6 @@ func _physics_process(delta):
 		
 	if flag == 2: #slower ascent for abducting the cow
 		if position.y > -300:
-			position.y += -30
+			position.y += -10
 
 
