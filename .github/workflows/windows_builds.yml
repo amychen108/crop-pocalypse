@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           lfs: true
-          submodules: recursive
+          
 
       # Use python 3.x release (works cross platform; best to keep self contained in it's own step)
       - name: Set up Python 3.x
@@ -64,7 +64,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           lfs: true
-          submodules: recursive
+        
 
       # Install all packages (except scons)
       - name: Configure dependencies
