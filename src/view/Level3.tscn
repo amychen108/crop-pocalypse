@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://djccl8w3otjc0"]
+[gd_scene load_steps=18 format=3 uid="uid://djccl8w3otjc0"]
 
 [ext_resource type="Texture2D" uid="uid://dh5u3aim0ijo" path="res://Landscape.png" id="1_6sxag"]
 [ext_resource type="Script" path="res://Level3.gd" id="1_h0tmf"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://Health.gd" id="8_28gmp"]
 [ext_resource type="AudioStream" uid="uid://ctlfv173c7u12" path="res://music/ufoMiss.mp3" id="9_dfth3"]
 [ext_resource type="AudioStream" uid="uid://clne275le01u8" path="res://music/lv3.mp3" id="10_jm5su"]
+[ext_resource type="Texture2D" uid="uid://dma7o8877fc7x" path="res://cowpal.png" id="10_wt8se"]
 [ext_resource type="AudioStream" uid="uid://dy7r5pkvtms7m" path="res://music/splat.mp3" id="11_xs5bk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5b3bj"]
@@ -37,7 +38,6 @@ texture = ExtResource("1_6sxag")
 [node name="UFO" type="Area2D" parent="."]
 position = Vector2(1116, 1001)
 script = ExtResource("2_hii0u")
-metadata/_edit_group_ = true
 
 [node name="Ufo" type="Sprite2D" parent="UFO"]
 position = Vector2(222, 42)
@@ -73,8 +73,13 @@ metadata/_edit_use_anchors_ = true
 stream = ExtResource("7_ajf0y")
 
 [node name="ufoMiss" type="AudioStreamPlayer2D" parent="UFO"]
-position = Vector2(-1116, -999)
 stream = ExtResource("9_dfth3")
+
+[node name="Abductee" type="Sprite2D" parent="UFO"]
+visible = false
+position = Vector2(224, 181)
+scale = Vector2(0.378, 0.378)
+texture = ExtResource("10_wt8se")
 
 [node name="Tractor3" parent="." instance=ExtResource("3_2enbh")]
 position = Vector2(356, 1228)
@@ -88,7 +93,7 @@ offset_top = -8.0
 offset_right = 189.0
 offset_bottom = 80.0
 theme_override_font_sizes/font_size = 64
-text = "Score:"
+text = "Score: 0"
 
 [node name="SPLAT" type="AudioStreamPlayer2D" parent="Tractor3"]
 position = Vector2(-472, -1076)

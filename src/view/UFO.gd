@@ -25,8 +25,8 @@ func _process(delta):
 	if scoreLabel.get_score() >= lastSpawn + scoreInterval: #UFO spawns at score intervals
 		lastSpawn += scoreInterval
 		flag = 1
-		position.x = randf_range(-500, 1200) 
-		position.y = -200
+		position.x = randf_range(-500, 900) 
+		position.y = -300
 		
 func _on_area_entered(node):
 	if node.name == "Tractor3":
@@ -40,17 +40,22 @@ func _on_area_entered(node):
 
 func _physics_process(delta):
 	if flag == 0: #when UFO is hit, it retreats
-		if position.y > -200:
-			position.y+= -100
+		if position.y > -300:
+			position.y+= -60
 		
 	if flag == 1: #when UFO spawns, it drifts diagonally downward
+		$Abductee.hide()
 		$CollisionShape2D.disabled = false
 		position.x += 4
 		position.y += 18
 		if position.y > 1750: #if off screen, player missed it
-			livesLabel.lose_life()
 			$ufoMiss.play()
+			livesLabel.lose_life()
+			for i in range(scoreInterval+5):
+				scoreLabel.lose_score()
+			lastSpawn = scoreLabel.get_score()
 			$CollisionShape2D.disabled = true #you cannot hit the UFO as it ascends
+			$Abductee.show() 
 			flag = 0
 			
 
