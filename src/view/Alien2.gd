@@ -11,7 +11,6 @@ const motor = preload("res://Motor.tscn")
 func _ready():
 	player = get_node("/root/Level2/Farmer")
 	hurtSound = get_node("/root/Level2/alienHurt")
-	add_child(hurtSound)
 	$AlienN.visible = false
 	hitflashAnim = $hitflashAnim
 	
