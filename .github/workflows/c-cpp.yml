@@ -1,19 +1,23 @@
-name: C++ Build Test With CMAKE
+name: C/C++ CI
 
 on:
   push:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+
 jobs:
   build:
+
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v4
     - name: Build
       run: make
     - name: Test
-      run: make test
-    - name: Test2
       run: |
-        ./build/src/Controller/unit-test
+        make test
+        # Assuming your test executable is named 'unit_tests'
+        ./unit_tests
+
