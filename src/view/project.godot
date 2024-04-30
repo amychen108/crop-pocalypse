@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="my Testing"
+config/name="Crop-pocalypse"
 run/main_scene="res://OpenScreen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
