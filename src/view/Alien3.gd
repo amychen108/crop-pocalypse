@@ -5,6 +5,8 @@ var player
 func _ready():
 	player = get_node("/root/Level3/Tractor3")
 	$Alien.visible = false
+	$CollisionFootL.disabled = true #foot collisions are only for level2 for more lenient hits
+	$CollisionFootR.disabled = true
 
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)

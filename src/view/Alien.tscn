@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cx46yqg3fftyg"]
+[gd_scene load_steps=10 format=3 uid="uid://cx46yqg3fftyg"]
 
 [ext_resource type="Texture2D" uid="uid://btumarfm3xo0g" path="res://Alien.png" id="1_htj3a"]
 [ext_resource type="Shader" uid="uid://drb7dhvgyerke" path="res://hitflash.tres" id="1_wj7ak"]
@@ -11,8 +11,8 @@ shader_parameter/enabled = false
 shader_parameter/tint = Color(1, 1, 1, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2u4cy"]
-radius = 43.0
-height = 248.0
+radius = 44.5
+height = 244.0
 
 [sub_resource type="Animation" id="Animation_oa0jk"]
 length = 0.2
@@ -52,6 +52,9 @@ _data = {
 "hitflash": SubResource("Animation_t543w")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_genv3"]
+size = Vector2(53.75, 26.875)
+
 [node name="Alien" type="CharacterBody2D" groups=["alien"]]
 position = Vector2(0, 1)
 scale = Vector2(0.8, 0.8)
@@ -69,11 +72,20 @@ scale = Vector2(0.162198, 0.13498)
 texture = ExtResource("2_kdakq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-7, -2)
+position = Vector2(-8.25, -13.25)
 shape = SubResource("CapsuleShape2D_2u4cy")
-metadata/_edit_lock_ = true
 
 [node name="hitflashAnim" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_fjcqi")
 }
+
+[node name="CollisionFootL" type="CollisionShape2D" parent="."]
+position = Vector2(-75.625, 109.375)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_genv3")
+
+[node name="CollisionFootR" type="CollisionShape2D" parent="."]
+position = Vector2(36.25, 109.687)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_genv3")
