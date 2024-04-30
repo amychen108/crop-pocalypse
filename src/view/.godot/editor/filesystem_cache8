@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1714433419
+::res://::1714435357
 Alien1.gd::GDScript::-1::1714418133::0::1::::<>CharacterBody2D<>::
-Alien2.gd::GDScript::-1::1714430638::0::1::::<>CharacterBody2D<>::
+Alien2.gd::GDScript::-1::1714434194::0::1::::<>CharacterBody2D<>::
 Alien3.gd::GDScript::-1::1714418211::0::1::::<>CharacterBody2D<>::
 Alien.png::CompressedTexture2D::3762025773014647496::1714387231::1714387314::1::::<><>::
 Alien.tscn::PackedScene::6448977662679679994::1714427828::0::1::::<><>::uid://btumarfm3xo0g::::res://Alien.png<>uid://drb7dhvgyerke::::res://hitflash.tres<>uid://ccxokpnt075cp::::res://AlienN.png
@@ -24,11 +24,11 @@ highScores.gd::GDScript::-1::1714418623::0::1::::<>Node<>::
 hitflash.tres::VisualShader::8356485472239360572::1714430638::0::1::::<><>::
 Landscape.png::CompressedTexture2D::226875871887923048::1714075829::1714075862::1::::<><>::
 Level1.gd::GDScript::-1::1714075981::0::1::::<>Node2D<>::
-Level1.tscn::PackedScene::1563204657555564052::1714433419::0::1::::<><>::uid://dh5u3aim0ijo::::res://Landscape.png<>res://Level1.gd<>res://Alien1.gd<>res://Farmhouse.gd<>uid://cx46yqg3fftyg::::res://Alien.tscn<>uid://dcxrxf5nnwxy6::::res://Farmhouse.png<>res://Health.gd<>uid://cvye1tb86u1k5::::res://Farmhand.tscn<>res://TutorialHUD.gd<>uid://cvijyvg5d2s5t::::res://music/lv1.mp3
+Level1.tscn::PackedScene::1563204657555564052::1714434185::0::1::::<><>::uid://dh5u3aim0ijo::::res://Landscape.png<>res://Level1.gd<>res://Alien1.gd<>uid://h4c4px1d7n01::::res://music/lv1VO.mp3<>res://Farmhouse.gd<>uid://cx46yqg3fftyg::::res://Alien.tscn<>uid://dcxrxf5nnwxy6::::res://Farmhouse.png<>res://Health.gd<>uid://cvye1tb86u1k5::::res://Farmhand.tscn<>res://TutorialHUD.gd<>uid://cvijyvg5d2s5t::::res://music/lv1.mp3
 Level2.gd::GDScript::-1::1714420039::0::1::::<>Node2D<>::
-Level2.tscn::PackedScene::7563005760540945649::1714431200::0::1::::<><>::res://Level2.gd<>uid://dh5u3aim0ijo::::res://Landscape.png<>res://Tractor2.gd<>uid://bb5biilmrib2f::::res://Farmer.tscn<>uid://tgp3ogu84cnp::::res://Tractor.png<>uid://cx46yqg3fftyg::::res://Alien.tscn<>res://Health.gd<>res://Alien2.gd<>res://TutorialHUD.gd<>uid://cfmv5q3ui3m62::::res://TractorGreyscale.png<>uid://cj6vmy7lxcbns::::res://tractorGrey1.png<>uid://ckghigcqufr6u::::res://music/lv2.mp3<>uid://cps07ui34das4::::res://tractorGrey2.png<>uid://clnvawlogsuwv::::res://tractorGrey3.png<>uid://dcxrxf5nnwxy6::::res://Farmhouse.png<>uid://i8uo24wdxpdl::::res://tractorGrey4.png<>uid://c5f3x81xhkh0e::::res://Motor.tscn<>uid://butp18t4ctffi::::res://music/farmerHit.mp3<>uid://ces6aaapibkym::::res://music/alienHurt.mp3<>uid://c7inpj7xybdpt::::res://music/motorGet.mp3
+Level2.tscn::PackedScene::7563005760540945649::1714434194::0::1::::<><>::res://Level2.gd<>uid://dh5u3aim0ijo::::res://Landscape.png<>res://Tractor2.gd<>uid://bb5biilmrib2f::::res://Farmer.tscn<>uid://bvfo5estken3q::::res://music/lv2VO.mp3<>uid://tgp3ogu84cnp::::res://Tractor.png<>uid://cx46yqg3fftyg::::res://Alien.tscn<>res://Health.gd<>res://Alien2.gd<>res://TutorialHUD.gd<>uid://cfmv5q3ui3m62::::res://TractorGreyscale.png<>uid://cj6vmy7lxcbns::::res://tractorGrey1.png<>uid://ckghigcqufr6u::::res://music/lv2.mp3<>uid://cps07ui34das4::::res://tractorGrey2.png<>uid://clnvawlogsuwv::::res://tractorGrey3.png<>uid://dcxrxf5nnwxy6::::res://Farmhouse.png<>uid://i8uo24wdxpdl::::res://tractorGrey4.png<>uid://c5f3x81xhkh0e::::res://Motor.tscn<>uid://butp18t4ctffi::::res://music/farmerHit.mp3<>uid://ces6aaapibkym::::res://music/alienHurt.mp3<>uid://c7inpj7xybdpt::::res://music/motorGet.mp3
 Level3.gd::GDScript::-1::1714418623::0::1::::<>Node2D<>::
-Level3.tscn::PackedScene::7795233245596110713::1714432420::0::1::::<><>::uid://dh5u3aim0ijo::::res://Landscape.png<>res://Level3.gd<>res://UFO.gd<>uid://clursiyx4gfau::::res://tractor.tscn<>uid://cx46yqg3fftyg::::res://Alien.tscn<>uid://balpm3y75ute5::::res://ufo.png<>res://UFO HP.gd<>res://Score.gd<>uid://cv4b5yq2mn37j::::res://music/CLANK.mp3<>res://TutorialHUD.gd<>res://Health.gd<>uid://ctlfv173c7u12::::res://music/ufoMiss.mp3<>uid://clne275le01u8::::res://music/lv3.mp3<>uid://dqjg7cudcmvbo::::res://cowloud.png<>uid://dy7r5pkvtms7m::::res://music/splat.mp3
+Level3.tscn::PackedScene::7795233245596110713::1714434186::0::1::::<><>::uid://dh5u3aim0ijo::::res://Landscape.png<>res://Level3.gd<>res://UFO.gd<>uid://clursiyx4gfau::::res://tractor.tscn<>uid://cx46yqg3fftyg::::res://Alien.tscn<>uid://balpm3y75ute5::::res://ufo.png<>res://UFO HP.gd<>res://Score.gd<>uid://cv4b5yq2mn37j::::res://music/CLANK.mp3<>res://TutorialHUD.gd<>res://Health.gd<>uid://ctlfv173c7u12::::res://music/ufoMiss.mp3<>uid://clne275le01u8::::res://music/lv3.mp3<>uid://dqjg7cudcmvbo::::res://cowloud.png<>uid://dy7r5pkvtms7m::::res://music/splat.mp3<>uid://208mlrd4xcag::::res://music/lv3VO.mp3
 Motor.png::CompressedTexture2D::7138651286319538837::1714380203::1714380204::1::::<><>::
 Motor.tscn::PackedScene::6890571488844986770::1714382983::0::1::::<><>::uid://c8yasqsg3lbbx::::res://Motor.png
 OpenScreen.gd::GDScript::-1::1714418642::0::1::::<>Node2D<>::
@@ -49,12 +49,12 @@ TractorGreyscale.png::CompressedTexture2D::5149887633838964553::1714387695::1714
 TractorPart.png::CompressedTexture2D::4526636611356764500::1714075829::1714075863::1::::<><>::
 TutorialHUD.gd::GDScript::-1::1714433419::0::1::::<>CanvasLayer<>::
 UFO HP.gd::GDScript::-1::1714418825::0::1::::<>Node<>::
-UFO.gd::GDScript::-1::1714430054::0::1::::<>Area2D<>::
+UFO.gd::GDScript::-1::1714433599::0::1::::<>Area2D<>::
 ufo.png::CompressedTexture2D::2410062532630056178::1714075829::1714075861::1::::<><>::
 WinLose.gd::GDScript::-1::1714075982::0::1::::<>Node2D<>::
 YouLose.tscn::PackedScene::5456766580319846794::1714430122::0::1::::<><>::res://WinLose.gd<>uid://cxoa5h8fpwcqg::::res://OpenScreen.png<>res://RestartButton.gd<>uid://dma7o8877fc7x::::res://cowpal.png<>uid://cj10ibp81icrv::::res://music/defeat.mp3
 YouWin.tscn::PackedScene::5199770478160530178::1714430122::0::1::::<><>::res://WinLose.gd<>uid://cxoa5h8fpwcqg::::res://OpenScreen.png<>res://ButtonMenu.gd<>uid://2ffgpg8d881i::::res://cowthank.png<>uid://8a8x8nt50uij::::res://music/victory.mp3<>res://ButtonMain.gd
-::res://music/::1714433437
+::res://music/::1714433440
 alienHurt.mp3::AudioStreamMP3::5092637768979441740::1714419500::1714419513::1::::<><>::
 bgmTitle.mp3::AudioStreamMP3::7232139097230444678::1714075829::1714075860::1::::<><>::
 CLANK.mp3::AudioStreamMP3::6306789615983140033::1714075829::1714075860::1::::<><>::

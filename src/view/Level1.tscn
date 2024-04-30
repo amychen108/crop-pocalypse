@@ -61,17 +61,6 @@ metadata/_edit_lock_ = true
 [node name="LV1" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_f7m4h")
 
-[node name="Farmhand" parent="." instance=ExtResource("5_u7kou")]
-position = Vector2(364, 1264)
-
-[node name="Health" type="Node" parent="Farmhand"]
-script = ExtResource("5_hgufq")
-
-[node name="Lives" type="Label" parent="Farmhand/Health"]
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 64
-
 [node name="Farmhouse" type="Area2D" parent="."]
 position = Vector2(51, -38)
 script = ExtResource("3_xtnfe")
@@ -85,6 +74,17 @@ texture = ExtResource("4_sejto")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Farmhouse"]
 position = Vector2(1144.5, 280)
 shape = SubResource("RectangleShape2D_2kmhi")
+
+[node name="Farmhand" parent="." instance=ExtResource("5_u7kou")]
+position = Vector2(364, 1264)
+
+[node name="Health" type="Node" parent="Farmhand"]
+script = ExtResource("5_hgufq")
+
+[node name="Lives" type="Label" parent="Farmhand/Health"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 64
 
 [node name="Alien" parent="." instance=ExtResource("4_4hwvj")]
 position = Vector2(1432, 1381)

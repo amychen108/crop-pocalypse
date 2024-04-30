@@ -74,24 +74,6 @@ texture = ExtResource("1_6sxag")
 [node name="LV3" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_jm5su")
 
-[node name="Tractor3" parent="." instance=ExtResource("3_2enbh")]
-position = Vector2(356, 1228)
-metadata/_edit_group_ = true
-
-[node name="Score" type="Node" parent="Tractor3"]
-script = ExtResource("7_5fgyt")
-
-[node name="Count" type="Label" parent="Tractor3/Score"]
-offset_top = -8.0
-offset_right = 189.0
-offset_bottom = 80.0
-theme_override_font_sizes/font_size = 64
-text = "Score: 0"
-
-[node name="SPLAT" type="AudioStreamPlayer2D" parent="Tractor3"]
-position = Vector2(-472, -1076)
-stream = ExtResource("11_xs5bk")
-
 [node name="UFO" type="Area2D" parent="."]
 position = Vector2(1116, 1001)
 script = ExtResource("2_hii0u")
@@ -138,6 +120,24 @@ position = Vector2(128.5, 174.25)
 scale = Vector2(0.389, 0.389)
 texture = ExtResource("10_lss7s")
 
+[node name="Tractor3" parent="." instance=ExtResource("3_2enbh")]
+position = Vector2(356, 1228)
+metadata/_edit_group_ = true
+
+[node name="Score" type="Node" parent="Tractor3"]
+script = ExtResource("7_5fgyt")
+
+[node name="Count" type="Label" parent="Tractor3/Score"]
+offset_top = -8.0
+offset_right = 189.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 64
+text = "Score: 0"
+
+[node name="SPLAT" type="AudioStreamPlayer2D" parent="Tractor3"]
+position = Vector2(-472, -1076)
+stream = ExtResource("11_xs5bk")
+
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 0.25
 
@@ -149,6 +149,6 @@ position = Vector2(0, 10)
 rotation = -0.0043505
 
 [connection signal="pressed" from="Tutorial3HUD/Button" to="Tutorial3HUD" method="_on_button_pressed"]
-[connection signal="body_entered" from="Tractor3" to="Tractor3" method="_on_body_entered"]
 [connection signal="area_entered" from="UFO" to="UFO" method="_on_area_entered"]
+[connection signal="body_entered" from="Tractor3" to="Tractor3" method="_on_body_entered"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

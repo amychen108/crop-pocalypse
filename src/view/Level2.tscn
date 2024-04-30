@@ -79,31 +79,6 @@ texture = ExtResource("11_kbmu4")
 [node name="LV2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_6fldw")
 
-[node name="Farmer" parent="." instance=ExtResource("3_dc2r7")]
-position = Vector2(150, 1467)
-metadata/_edit_group_ = true
-
-[node name="Health" type="Node" parent="Farmer"]
-script = ExtResource("5_2s8kf")
-
-[node name="Lives" type="Label" parent="Farmer/Health"]
-offset_right = 40.0
-offset_bottom = 88.0
-theme_override_font_sizes/font_size = 64
-metadata/_edit_use_anchors_ = true
-
-[node name="hitTimer" type="Timer" parent="Farmer"]
-wait_time = 0.5
-
-[node name="farmerHit" type="AudioStreamPlayer2D" parent="Farmer"]
-position = Vector2(-150, -1467)
-stream = ExtResource("18_7t4ym")
-
-[node name="motorGet" type="AudioStreamPlayer2D" parent="Farmer"]
-position = Vector2(-150, -1467)
-stream = ExtResource("20_obdg8")
-volume_db = 10.0
-
 [node name="Tractor2" type="Area2D" parent="."]
 script = ExtResource("2_g2uod")
 
@@ -142,12 +117,37 @@ scale = Vector2(0.265197, 0.265197)
 texture = ExtResource("12_3bi6k")
 
 [node name="Parts" type="Label" parent="Tractor2"]
-offset_left = 1222.0
-offset_top = 116.0
-offset_right = 1407.0
-offset_bottom = 253.0
+offset_left = 1265.0
+offset_top = 69.0
+offset_right = 1470.0
+offset_bottom = 206.0
 theme_override_font_sizes/font_size = 100
 text = "0 / 5"
+
+[node name="Farmer" parent="." instance=ExtResource("3_dc2r7")]
+position = Vector2(150, 1467)
+metadata/_edit_group_ = true
+
+[node name="Health" type="Node" parent="Farmer"]
+script = ExtResource("5_2s8kf")
+
+[node name="Lives" type="Label" parent="Farmer/Health"]
+offset_right = 40.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 64
+metadata/_edit_use_anchors_ = true
+
+[node name="hitTimer" type="Timer" parent="Farmer"]
+wait_time = 0.5
+
+[node name="farmerHit" type="AudioStreamPlayer2D" parent="Farmer"]
+position = Vector2(-150, -1467)
+stream = ExtResource("18_7t4ym")
+
+[node name="motorGet" type="AudioStreamPlayer2D" parent="Farmer"]
+position = Vector2(-150, -1467)
+stream = ExtResource("20_obdg8")
+volume_db = 10.0
 
 [node name="Alien" parent="." instance=ExtResource("4_pe3a8")]
 position = Vector2(762, 216)
@@ -178,6 +178,6 @@ motor_scene = ExtResource("12_kfkw1")
 stream = ExtResource("19_sl0fe")
 
 [connection signal="pressed" from="Tutorial2HUD/Button" to="Tutorial2HUD" method="_on_button_pressed"]
+[connection signal="area_entered" from="Tractor2" to="Tractor2" method="_on_area_entered"]
 [connection signal="area_entered" from="Farmer" to="Farmer" method="_on_area_entered"]
 [connection signal="timeout" from="Farmer/hitTimer" to="Farmer" method="_on_timer_timeout"]
-[connection signal="area_entered" from="Tractor2" to="Tractor2" method="_on_area_entered"]
