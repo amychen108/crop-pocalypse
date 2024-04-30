@@ -16,4 +16,4 @@ jobs:
       run: make test
     - name: Test2
       run: |
-        ./src/controller/unit-test
+        ./src/Controller/unit-test
