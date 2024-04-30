@@ -5,18 +5,12 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
     - name: Build
-      run: |
-        cmake -S . -B build
-        cmake --build build/
+      run: make
     - name: Test
-      run: |
-        ./build/unit-tests.cpp
+      run: make test
