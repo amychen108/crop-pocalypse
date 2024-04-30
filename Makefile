@@ -11,9 +11,9 @@ BUILD_DIR := build
 TEST_DIR := test
 
 # Source files
-SRCS := $(wildcard $(SRC_DIR)/*.cpp)
+SRCS := $(wildcard $(SRC)/*.cpp)
 # Object files
-OBJS := $(SRCS:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)
+OBJS := $(SRCS:$(SRC)/%.cpp=$(BUILD_DIR)/%.o)
 # Test files
 TEST_SRCS := $(wildcard $(TEST_DIR)/*.cpp)
 # Test executables
