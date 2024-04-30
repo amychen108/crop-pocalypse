@@ -1,79 +1,27 @@
-[gd_scene load_steps=9 format=3 uid="uid://cx46yqg3fftyg"]
+[gd_scene load_steps=4 format=3 uid="uid://cx46yqg3fftyg"]
 
 [ext_resource type="Texture2D" uid="uid://btumarfm3xo0g" path="res://Alien.png" id="1_htj3a"]
-[ext_resource type="Shader" uid="uid://drb7dhvgyerke" path="res://hitflash.tres" id="1_wj7ak"]
 [ext_resource type="Texture2D" uid="uid://ccxokpnt075cp" path="res://AlienN.png" id="2_kdakq"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5i6qb"]
-resource_local_to_scene = true
-shader = ExtResource("1_wj7ak")
-shader_parameter/enabled = false
-shader_parameter/tint = Color(1, 1, 1, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2u4cy"]
 radius = 43.0
 height = 248.0
 
-[sub_resource type="Animation" id="Animation_oa0jk"]
-length = 0.2
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Alien:material:shader_parameter/enabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_t543w"]
-resource_name = "hitflash"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Alien:material:shader_parameter/enabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fjcqi"]
-_data = {
-"RESET": SubResource("Animation_oa0jk"),
-"hitflash": SubResource("Animation_t543w")
-}
-
-[node name="Alien" type="CharacterBody2D" groups=["alien"]]
+[node name="Alien" type="CharacterBody2D"]
 position = Vector2(0, 1)
 scale = Vector2(0.8, 0.8)
+metadata/_edit_group_ = true
 
 [node name="Alien" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_5i6qb")
 position = Vector2(10, -31)
 scale = Vector2(0.162198, 0.13498)
 texture = ExtResource("1_htj3a")
-metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, -2)
+shape = SubResource("CapsuleShape2D_2u4cy")
 
 [node name="AlienN" type="Sprite2D" parent="."]
 position = Vector2(10, -31)
 scale = Vector2(0.162198, 0.13498)
 texture = ExtResource("2_kdakq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-7, -2)
-shape = SubResource("CapsuleShape2D_2u4cy")
-metadata/_edit_lock_ = true
-
-[node name="hitflashAnim" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_fjcqi")
-}

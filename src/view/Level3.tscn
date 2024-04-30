@@ -1,21 +1,17 @@
-[gd_scene load_steps=19 format=3 uid="uid://djccl8w3otjc0"]
+[gd_scene load_steps=15 format=3 uid="uid://djccl8w3otjc0"]
 
 [ext_resource type="Texture2D" uid="uid://dh5u3aim0ijo" path="res://Landscape.png" id="1_6sxag"]
 [ext_resource type="Script" path="res://Level3.gd" id="1_h0tmf"]
 [ext_resource type="Script" path="res://UFO.gd" id="2_hii0u"]
-[ext_resource type="PackedScene" uid="uid://clursiyx4gfau" path="res://tractor.tscn" id="3_2enbh"]
+[ext_resource type="PackedScene" uid="uid://dvje4v3m2w03o" path="res://tractor.tscn" id="3_2enbh"]
 [ext_resource type="PackedScene" uid="uid://cx46yqg3fftyg" path="res://Alien.tscn" id="4_cmt13"]
 [ext_resource type="Texture2D" uid="uid://balpm3y75ute5" path="res://ufo.png" id="4_o1as8"]
 [ext_resource type="Script" path="res://UFO HP.gd" id="6_64huj"]
 [ext_resource type="Script" path="res://Score.gd" id="7_5fgyt"]
 [ext_resource type="AudioStream" uid="uid://cv4b5yq2mn37j" path="res://music/CLANK.mp3" id="7_ajf0y"]
 [ext_resource type="Script" path="res://TutorialHUD.gd" id="7_oheig"]
-[ext_resource type="Script" path="res://Health.gd" id="8_28gmp"]
-[ext_resource type="AudioStream" uid="uid://ctlfv173c7u12" path="res://music/ufoMiss.mp3" id="9_dfth3"]
 [ext_resource type="AudioStream" uid="uid://clne275le01u8" path="res://music/lv3.mp3" id="10_jm5su"]
-[ext_resource type="Texture2D" uid="uid://dqjg7cudcmvbo" path="res://cowloud.png" id="10_lss7s"]
 [ext_resource type="AudioStream" uid="uid://dy7r5pkvtms7m" path="res://music/splat.mp3" id="11_xs5bk"]
-[ext_resource type="AudioStream" uid="uid://208mlrd4xcag" path="res://music/lv3VO.mp3" id="15_wa8jk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5b3bj"]
 radius = 42.0476
@@ -31,52 +27,15 @@ position = Vector2(0, -2)
 script = ExtResource("1_h0tmf")
 alien_scene = ExtResource("4_cmt13")
 
-[node name="Tutorial3HUD" type="CanvasLayer" parent="."]
-process_mode = 2
-script = ExtResource("7_oheig")
-
-[node name="Label" type="Label" parent="Tutorial3HUD"]
-offset_left = -84.0
-offset_top = 353.0
-offset_right = 1692.0
-offset_bottom = 930.0
-theme_override_font_sizes/font_size = 40
-text = "Level 3
-
-Y'all done had 'nuff o' them alien shenanigans, ain't ya? 
-Well, now's the time fer some good ol' fashioned revenge! 
-Hop in that truck 'n mow down them varmints 
-like a tornado through a trailer park! 
-Then, once ya done sweepin' up them little green fellas, 
-it's time to take on their mothership. 
-Show 'em who's the boss 'round here 'n send 'em packin' back where they belong! 
-No more messin' with our farm!"
-horizontal_alignment = 1
-
-[node name="Button" type="Button" parent="Tutorial3HUD"]
-offset_left = 719.0
-offset_top = 944.0
-offset_right = 901.0
-offset_bottom = 1040.0
-theme_override_font_sizes/font_size = 64
-text = "Begin"
-
-[node name="LevelVO" type="AudioStreamPlayer2D" parent="Tutorial3HUD"]
-position = Vector2(0, -2)
-stream = ExtResource("15_wa8jk")
-volume_db = 10.0
-
 [node name="Landscape" type="Sprite2D" parent="."]
 position = Vector2(804, 797)
 scale = Vector2(0.64879, 0.640524)
 texture = ExtResource("1_6sxag")
 
-[node name="LV3" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("10_jm5su")
-
 [node name="UFO" type="Area2D" parent="."]
 position = Vector2(1116, 1001)
 script = ExtResource("2_hii0u")
+metadata/_edit_group_ = true
 
 [node name="Ufo" type="Sprite2D" parent="UFO"]
 position = Vector2(222, 42)
@@ -97,28 +56,8 @@ offset_bottom = 88.0
 theme_override_font_sizes/font_size = 64
 horizontal_alignment = 2
 
-[node name="Lives" type="Node" parent="UFO"]
-script = ExtResource("8_28gmp")
-
-[node name="Lives" type="Label" parent="UFO/Lives"]
-offset_top = 55.0
-offset_right = 173.0
-offset_bottom = 143.0
-theme_override_font_sizes/font_size = 64
-text = "Lives:"
-metadata/_edit_use_anchors_ = true
-
 [node name="CLANK" type="AudioStreamPlayer2D" parent="UFO"]
 stream = ExtResource("7_ajf0y")
-
-[node name="ufoMiss" type="AudioStreamPlayer2D" parent="UFO"]
-stream = ExtResource("9_dfth3")
-
-[node name="Abductee" type="Sprite2D" parent="UFO"]
-visible = false
-position = Vector2(128.5, 174.25)
-scale = Vector2(0.389, 0.389)
-texture = ExtResource("10_lss7s")
 
 [node name="Tractor3" parent="." instance=ExtResource("3_2enbh")]
 position = Vector2(356, 1228)
@@ -128,15 +67,38 @@ metadata/_edit_group_ = true
 script = ExtResource("7_5fgyt")
 
 [node name="Count" type="Label" parent="Tractor3/Score"]
-offset_top = -8.0
-offset_right = 189.0
-offset_bottom = 80.0
+offset_right = 40.0
+offset_bottom = 23.0
 theme_override_font_sizes/font_size = 64
-text = "Score: 0"
 
 [node name="SPLAT" type="AudioStreamPlayer2D" parent="Tractor3"]
 position = Vector2(-472, -1076)
 stream = ExtResource("11_xs5bk")
+
+[node name="Tutorial3HUD" type="CanvasLayer" parent="."]
+process_mode = 2
+script = ExtResource("7_oheig")
+
+[node name="Label" type="Label" parent="Tutorial3HUD"]
+offset_left = 322.0
+offset_top = 273.0
+offset_right = 1253.0
+offset_bottom = 725.0
+theme_override_font_sizes/font_size = 64
+text = "Level 3
+
+Quickly,
+run over the aliens 
+and destroy their mothership!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Tutorial3HUD"]
+offset_left = 710.0
+offset_top = 743.0
+offset_right = 892.0
+offset_bottom = 839.0
+theme_override_font_sizes/font_size = 64
+text = "Begin"
 
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 0.25
@@ -148,7 +110,10 @@ curve = SubResource("Curve2D_5m3hx")
 position = Vector2(0, 10)
 rotation = -0.0043505
 
-[connection signal="pressed" from="Tutorial3HUD/Button" to="Tutorial3HUD" method="_on_button_pressed"]
+[node name="LV3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_jm5su")
+
 [connection signal="area_entered" from="UFO" to="UFO" method="_on_area_entered"]
 [connection signal="body_entered" from="Tractor3" to="Tractor3" method="_on_body_entered"]
+[connection signal="pressed" from="Tutorial3HUD/Button" to="Tutorial3HUD" method="_on_button_pressed"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

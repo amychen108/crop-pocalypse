@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bb5biilmrib2f"]
+[gd_scene load_steps=5 format=3 uid="uid://bb5biilmrib2f"]
 
 [ext_resource type="Script" path="res://Farmer.gd" id="1_ck53n"]
 [ext_resource type="Texture2D" uid="uid://dsfncc71x78kb" path="res://Farmer.png" id="2_l5x7h"]
@@ -8,29 +8,20 @@
 radius = 39.0
 height = 130.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_sfrw5"]
-radius = 30.0167
-
 [node name="Farmer" type="Area2D"]
 script = ExtResource("1_ck53n")
 
-[node name="Hurtbox" type="CollisionShape2D" parent="." groups=["hurt"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
 position = Vector2(4, 19)
 shape = SubResource("CapsuleShape2D_ogakm")
-metadata/_edit_lock_ = true
 
 [node name="Farmer2" type="Sprite2D" parent="."]
 position = Vector2(86.9999, 59)
 scale = Vector2(0.690726, 0.75)
 texture = ExtResource("2_l5x7h")
-metadata/_edit_lock_ = true
 
 [node name="OOF" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ub1s4")
-
-[node name="Hitbox" type="CollisionShape2D" parent="." groups=["hit"]]
-position = Vector2(96, -139)
-shape = SubResource("CircleShape2D_sfrw5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

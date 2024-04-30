@@ -20,6 +20,6 @@ func _physics_process(delta):
 	position.y = clamp(position.y, 0, screensize.y)
 
 func _on_body_entered(body):
-	body.queue_free() #remove aliens from queue upon contact with tractor
+	body.queue_free()
 	$Score.gain_score()
 	$SPLAT.play()

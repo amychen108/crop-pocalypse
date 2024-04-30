@@ -7,7 +7,7 @@ func _ready():
 	scene_tree = get_tree()
 	$ufoHP.text = "UFO Health: " + str(HP)
 	
-func lose_health(): #update UFO HP label
+func lose_health():
 	HP-= 1
 	$ufoHP.text = "UFO Health: " + str(HP)
 	

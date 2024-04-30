@@ -1,6 +1,6 @@
 extends Area2D
 
-var n = 7
+var n = 10
 
 func _physics_process(delta):
 	var screensize = get_viewport_rect().size
@@ -16,7 +16,7 @@ func _physics_process(delta):
 		input.x = n
 		
 	position += input
-	position.x = clamp(position.x, 0, screensize.x) #prevents player from running offscreen
+	position.x = clamp(position.x, 0, screensize.x)
 	position.y = clamp(position.y, 0, screensize.y)
 
 func _on_body_entered(body):
