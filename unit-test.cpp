@@ -2,8 +2,8 @@
 
 #include <iostream>
 #include <array>
-#include "health-calc.cpp"
-#include "high-score.cpp"
+#include "/src/Controller/health-calc.cpp"
+#include "/src/Controller/high-score.cpp"
 
 void testHealthCalc() {
     std::cout << "Testing Health Calculation, Damage Taken";
