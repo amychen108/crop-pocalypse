@@ -82,10 +82,8 @@ libraries = {
 
 [node name="CollisionFootL" type="CollisionShape2D" parent="."]
 position = Vector2(-75.625, 109.375)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_genv3")
 
 [node name="CollisionFootR" type="CollisionShape2D" parent="."]
 position = Vector2(36.25, 109.687)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_genv3")
