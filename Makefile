@@ -3,7 +3,7 @@ CXX := g++
 # Flags
 CXXFLAGS := -std=c++11 -Wall -Wextra -pedantic -g
 # Source files
-SRCS := $(wildcar *.cpp)
+SRCS := $(wildcard *.cpp)
 # Object files
 OBJS := $(SRCS:.cpp=.o)
 # Executable name for the main program
