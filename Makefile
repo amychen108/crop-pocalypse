@@ -3,11 +3,11 @@ CXX := g++
 # Flags
 CXXFLAGS := -std=c++11 -Wall -Wextra -pedantic -g
 # Source files
-SRCS := $(wildcard *.cpp)
+SRCS := $(unit-test.cpp)
 # Object files
 OBJS := $(SRCS:.cpp=.o)
 # Executable name for the main program
-MAIN := my_program
+MAIN := unit_tests
 
 # Build main program
 $(MAIN): $(OBJS)
