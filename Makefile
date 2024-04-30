@@ -1,9 +1,9 @@
 # Compiler
 CXX := g++
 # Compiler flags
-CXXFLAGS := -Wall -Wextra -std=c++11
+CXXFLAGS := -Wall -Wextra -std=c++11 -I/path/to/cppunit/headers
 # Test framework
-TEST := catch.hpp
+TEST := cppunit
 
 # Directories
 SRC_DIR := src
@@ -17,11 +17,11 @@ OBJS := $(SRCS:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)
 # Test files
 TEST_SRCS := $(wildcard $(TEST_DIR)/*.cpp)
 # Test executables
-TEST_EXES := $(TEST_SRCS:$(TEST_DIR)/%.cpp=$(BUILD_DIR)/%)
+TEST_EXES := $(BUILD_DIR)/TestCases
 
 # Default target
 .PHONY: all
-all: $(BUILD_DIR) $(OBJS)
+all: $(BUILD_DIR) $(OBJS) $(TEST_EXES)
 
 # Create build directory
 $(BUILD_DIR):
@@ -32,18 +32,20 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Compile test files
-$(BUILD_DIR)/%: $(TEST_DIR)/%.cpp $(OBJS)
-	$(CXX) $(CXXFLAGS) $^ -o $@
+$(BUILD_DIR)/TestCases: $(BUILD_DIR)/TestCases.o $(OBJS)
+	$(CXX) $(CXXFLAGS) $^ -o $@ -L/path/to/cppunit/libs -lcppunit
+
+$(BUILD_DIR)/%.o: $(TEST_DIR)/%.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Run tests
 .PHONY: test
 test: $(TEST_EXES)
-	@for test_exe in $(TEST_EXES); do \
-		echo "Running $$test_exe"; \
-		$$test_exe; \
-	done
+	@echo "Running tests..."
+	@$(BUILD_DIR)/TestCases
 
 # Clean
 .PHONY: clean
 clean:
 	rm -rf $(BUILD_DIR)
+
