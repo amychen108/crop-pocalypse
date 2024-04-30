@@ -1,20 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://yrgt6lnf0ar1"]
+[gd_scene load_steps=6 format=3 uid="uid://yrgt6lnf0ar1"]
 
 [ext_resource type="Script" path="res://OpenScreen.gd" id="1_2bfod"]
 [ext_resource type="Texture2D" uid="uid://cxoa5h8fpwcqg" path="res://OpenScreen.png" id="1_gp811"]
 [ext_resource type="Script" path="res://ButtonMenu.gd" id="2_3hodk"]
 [ext_resource type="AudioStream" uid="uid://dbbkjldgqy8ni" path="res://music/bgmTitle.mp3" id="4_xh8j7"]
+[ext_resource type="Script" path="res://highScores.gd" id="5_q00lg"]
 
-[node name="Node2D" type="Node2D"]
+[node name="openScene" type="Node2D"]
 position = Vector2(-6, -3)
 script = ExtResource("1_2bfod")
 
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_xh8j7")
+
+[node name="highScores" type="Node" parent="."]
+script = ExtResource("5_q00lg")
+
+[node name="scores" type="Label" parent="highScores"]
+offset_left = 804.0
+offset_top = 21.0
+offset_right = 878.0
+offset_bottom = 109.0
+theme_override_constants/line_spacing = -15
+theme_override_font_sizes/font_size = 48
+
+[node name="Button2" type="Button" parent="highScores"]
+visible = false
+offset_left = 596.0
+offset_top = 81.0
+offset_right = 791.0
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 20
+text = "Reset High Scores"
+
 [node name="OpenScreen" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(809, 702)
 scale = Vector2(0.641129, 0.554032)
 texture = ExtResource("1_gp811")
 
 [node name="Button" type="Button" parent="."]
+visible = false
 offset_left = 673.0
 offset_top = 672.0
 offset_right = 940.0
@@ -23,5 +49,13 @@ theme_override_font_sizes/font_size = 48
 text = "Start"
 script = ExtResource("2_3hodk")
 
-[node name="BGM" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_xh8j7")
+[node name="highScoresLabel" type="Label" parent="."]
+visible = false
+offset_left = 517.0
+offset_top = 23.0
+offset_right = 1083.0
+offset_bottom = 111.0
+theme_override_font_sizes/font_size = 48
+text = "High Scores:"
+
+[connection signal="pressed" from="highScores/Button2" to="highScores" method="_on_button_2_pressed"]

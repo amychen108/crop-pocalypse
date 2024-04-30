@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cj0kfbqepq32u"]
+[gd_scene load_steps=6 format=3 uid="uid://cj0kfbqepq32u"]
 
-[ext_resource type="Script" path="res://YouLose.gd" id="1_0u53o"]
+[ext_resource type="Script" path="res://WinLose.gd" id="1_0u53o"]
 [ext_resource type="Texture2D" uid="uid://cxoa5h8fpwcqg" path="res://OpenScreen.png" id="1_n14a5"]
 [ext_resource type="Script" path="res://RestartButton.gd" id="2_xrttt"]
+[ext_resource type="Texture2D" uid="uid://dma7o8877fc7x" path="res://cowpal.png" id="3_nip3g"]
 [ext_resource type="AudioStream" uid="uid://cj10ibp81icrv" path="res://music/defeat.mp3" id="4_k2on6"]
 
-[node name="Node2D" type="Node2D"]
+[node name="loseScene" type="Node2D"]
 position = Vector2(-6, -3)
 script = ExtResource("1_0u53o")
 
@@ -13,6 +14,11 @@ script = ExtResource("1_0u53o")
 position = Vector2(801, 690)
 scale = Vector2(0.641129, 0.554032)
 texture = ExtResource("1_n14a5")
+
+[node name="Abductee" type="Sprite2D" parent="."]
+position = Vector2(1396, 720)
+scale = Vector2(0.86175, 0.86175)
+texture = ExtResource("3_nip3g")
 
 [node name="ButtonRestart" type="Button" parent="."]
 offset_left = 671.0

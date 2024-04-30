@@ -1,27 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgc2pv37tn48u"]
+[gd_scene load_steps=7 format=3 uid="uid://cgc2pv37tn48u"]
 
-[ext_resource type="Script" path="res://YouWin.gd" id="1_2as62"]
+[ext_resource type="Script" path="res://WinLose.gd" id="1_oawv2"]
 [ext_resource type="Texture2D" uid="uid://cxoa5h8fpwcqg" path="res://OpenScreen.png" id="1_x0m1q"]
 [ext_resource type="Script" path="res://ButtonMenu.gd" id="2_nexmw"]
+[ext_resource type="Texture2D" uid="uid://2ffgpg8d881i" path="res://cowthank.png" id="3_to7r5"]
 [ext_resource type="AudioStream" uid="uid://8a8x8nt50uij" path="res://music/victory.mp3" id="4_il5rd"]
+[ext_resource type="Script" path="res://ButtonMain.gd" id="4_t4vj7"]
 
-[node name="Node2D" type="Node2D"]
+[node name="winScene" type="Node2D"]
 position = Vector2(-6, -3)
-script = ExtResource("1_2as62")
+script = ExtResource("1_oawv2")
 
 [node name="OpenScreen" type="Sprite2D" parent="."]
 position = Vector2(809, 702)
 scale = Vector2(0.641129, 0.554032)
 texture = ExtResource("1_x0m1q")
 
+[node name="Abductee" type="Sprite2D" parent="."]
+position = Vector2(1418, 730)
+scale = Vector2(0.86175, 0.86175)
+texture = ExtResource("3_to7r5")
+
 [node name="Button" type="Button" parent="."]
-offset_left = 673.0
-offset_top = 736.0
-offset_right = 940.0
-offset_bottom = 831.0
+offset_left = 495.0
+offset_top = 712.0
+offset_right = 762.0
+offset_bottom = 807.0
 theme_override_font_sizes/font_size = 48
 text = "Restart"
 script = ExtResource("2_nexmw")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 863.0
+offset_top = 711.0
+offset_right = 1130.0
+offset_bottom = 806.0
+theme_override_font_sizes/font_size = 48
+text = "Main Menu"
+script = ExtResource("4_t4vj7")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 676.0

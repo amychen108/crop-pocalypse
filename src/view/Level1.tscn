@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://wjh0txkfdpou"]
+[gd_scene load_steps=13 format=3 uid="uid://wjh0txkfdpou"]
 
 [ext_resource type="Texture2D" uid="uid://dh5u3aim0ijo" path="res://Landscape.png" id="1_0q8aa"]
 [ext_resource type="Script" path="res://Level1.gd" id="1_msfka"]
 [ext_resource type="Script" path="res://Alien1.gd" id="2_1fqjg"]
+[ext_resource type="AudioStream" uid="uid://h4c4px1d7n01" path="res://music/lv1VO.mp3" id="3_pw3pb"]
 [ext_resource type="Script" path="res://Farmhouse.gd" id="3_xtnfe"]
 [ext_resource type="PackedScene" uid="uid://cx46yqg3fftyg" path="res://Alien.tscn" id="4_4hwvj"]
 [ext_resource type="Texture2D" uid="uid://dcxrxf5nnwxy6" path="res://Farmhouse.png" id="4_sejto"]
@@ -23,31 +24,39 @@ process_mode = 2
 script = ExtResource("7_2prp8")
 
 [node name="Label" type="Label" parent="Tutorial1HUD"]
-offset_left = -83.0
-offset_top = 162.0
-offset_right = 1681.0
-offset_bottom = 614.0
-theme_override_font_sizes/font_size = 64
+offset_left = -43.0
+offset_top = 435.0
+offset_right = 1721.0
+offset_bottom = 1069.0
+theme_override_font_sizes/font_size = 40
 text = "Level 1
 
-Aliens are invading your farm!
-Quickly, 
-run to the door of house to notify the farmhand!
-Use WASD to move."
+Well, butter my biscuits! Them aliens done gone and invaded the farm! 
+They're swarmin' everywhere like hornets in August! 
+Quick now, ya gotta hightail it to the farmhouse 
+and let the farmer know what's goin' on! 
+Use them WASD keys to scurry on over there. 
+Don't let them critters catch ya!"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="Tutorial1HUD"]
-offset_left = 661.0
-offset_top = 715.0
-offset_right = 945.0
-offset_bottom = 816.0
+offset_left = 696.0
+offset_top = 944.0
+offset_right = 980.0
+offset_bottom = 1045.0
 theme_override_font_sizes/font_size = 64
 text = "Begin"
+
+[node name="LevelVO" type="AudioStreamPlayer2D" parent="Tutorial1HUD"]
+position = Vector2(0, -2)
+stream = ExtResource("3_pw3pb")
+volume_db = 10.0
 
 [node name="Landscape" type="Sprite2D" parent="."]
 position = Vector2(798, 801)
 scale = Vector2(0.643145, 0.644556)
 texture = ExtResource("1_0q8aa")
+metadata/_edit_lock_ = true
 
 [node name="LV1" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_f7m4h")
@@ -103,6 +112,10 @@ script = ExtResource("2_1fqjg")
 
 [node name="Alien7" parent="." instance=ExtResource("4_4hwvj")]
 position = Vector2(1070, 427)
+script = ExtResource("2_1fqjg")
+
+[node name="Alien8" parent="." instance=ExtResource("4_4hwvj")]
+position = Vector2(855, 719)
 script = ExtResource("2_1fqjg")
 
 [connection signal="pressed" from="Tutorial1HUD/Button" to="Tutorial1HUD" method="_on_button_pressed"]
