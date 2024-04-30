@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: C++ Build Test With CMAKE
 
 on:
   push:
