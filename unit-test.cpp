@@ -110,7 +110,7 @@ int main() {
         failedTests++;
     }
     
-     if (testHealthCal3()) {
+     if (testHealthCalc3()) {
         passedTests++;
     } else {
         failedTests++;
