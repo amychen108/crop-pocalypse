@@ -1,15 +1,15 @@
-class HealthCalc {
-    int currentHealth = 3;
-public:
-    void take_damage() {
-        currentHealth = currentHealth - 1;
-        if (currentHealth < 0) {
-            currentHealth = 0;
-        }
-    }
+// health-calc.cpp
+#include "health-calc.h"
 
-    int get_health() {
-        return currentHealth;
-    }
+HealthCalc::HealthCalc() {} // Create instance of class
 
-};
+void HealthCalc::take_damage() {
+    health--; // Decrease health by 1
+    if (health < 0) {
+        health = 0;
+    }
+}
+
+int HealthCalc::get_health() const {
+    return health;
+}
