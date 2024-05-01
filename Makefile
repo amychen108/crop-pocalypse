@@ -21,7 +21,7 @@ $(MAIN): $(OBJS)
 
 # Run tests
 test: $(MAIN)
-	./$(MAIN) && echo "Tests passed!" || echo "Tests failed!"
+	./unit_tests
 
 # Clean up
 clean:
